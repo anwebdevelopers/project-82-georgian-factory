@@ -1,0 +1,70 @@
+
+font-face {
+    font-family: 'Avenir Next Cyr';
+	font-display: swap;
+    src: local('AvenirNextCyr-BoldItalic'),
+        url('../fonts/AvenirNextCyr-BoldItalic.woff2') format('woff2'),
+        url('../fonts/AvenirNextCyr-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir Next Cyr';
+	font-display: swap;
+    src: local('AvenirNextCyr-Medium'),
+        url('../fonts/AvenirNextCyr-Medium.woff2') format('woff2'),
+        url('../fonts/AvenirNextCyr-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Cyr';
+	font-display: swap;
+    src: local('AvenirNextCyr-Italic'),
+        url('../fonts/AvenirNextCyr-Italic.woff2') format('woff2'),
+        url('../fonts/AvenirNextCyr-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+	font-display: swap;
+    src: local('BebasNeueRegular'),
+        url('../fonts/BebasNeueRegular.woff2') format('woff2'),
+        url('../fonts/BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Cyr';
+	font-display: swap;
+    src: local('AvenirNextCyr-Regular'),
+        url('../fonts/AvenirNextCyr-Regular.woff2') format('woff2'),
+        url('../fonts/AvenirNextCyr-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Cyr';
+	font-display: swap;
+    src: local('AvenirNextCyr-MediumItalic'),
+        url('../fonts/AvenirNextCyr-MediumItalic.woff2') format('woff2'),
+        url('../fonts/AvenirNextCyr-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir Next Cyr';
+	font-display: swap;
+    src: local('AvenirNextCyr-Bold'),
+        url('../fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
+        url('../fonts/AvenirNextCyr-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}

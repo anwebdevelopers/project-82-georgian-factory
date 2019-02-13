@@ -1,0 +1,210 @@
+@import 'components/vars.scss';
+@import 'components/normalize.scss';
+@import 'components/fonts.scss';
+
+*:focus::-webkit-input-placeholder {color: transparent}
+*:focus::-moz-placeholder          {color: transparent}
+*:focus:-moz-placeholder           {color: transparent}
+*:focus:-ms-input-placeholder      {color: transparent}
+
+*::-webkit-input-placeholder {
+	color: $color-main;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: $color-main;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: $color-main;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: $color-main;
+	opacity: 1;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: $color-main;
+}
+body input:required:valid,
+body textarea:required:valid {
+	color: $color-main;
+}
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+}
+body {
+	position: relative;
+	min-width: 320px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	font-weight: 500;
+	font-family: 'Avenir Next Cyr', sans-serif;
+	color: $color-main;
+	background-color: #fff;
+	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.container {
+	max-width: 1430px;
+	padding: 0 4%;
+	margin: 0 auto;
+}
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.button {
+	@include btn;
+	padding: 1.5rem 3.4rem;
+	font-size: 1.4rem;
+	font-family: inherit;
+	border: 2px solid currentColor;
+	background-image: linear-gradient(#fff, #fff);
+	background-position: 0 0;
+	background-size: 100% 0;
+	background-repeat: no-repeat;
+	transition: .3s;
+	&:active,
+	&:hover {
+		color: $color-main;
+		border-color: #fff;
+		background-size: 100% 100%;
+	}
+}
+.text {
+	* {
+		max-width: 100% !important;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 700;
+		text-transform: uppercase;
+		// color: #3436c0;
+	}
+	p,ul,ol,img {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+	ul,ol {
+		li {
+			margin: 1.5rem 0 0 0;
+		}
+	}
+	ul {
+		padding: 0;
+	    list-style: none;
+	    li {
+	        padding: 0 0 0 4rem;
+	        background-image: linear-gradient($color-main, $color-main);
+	        background-position: 0 1.4rem;
+	        background-size: 2.5rem 2px;
+	        background-repeat: no-repeat;
+	    }
+	}
+	a:not( [ class ] ) {
+		text-decoration: none;
+		padding: 0 .3rem 0 .3rem;
+		color: $color-main;
+		background-image: linear-gradient($color-main, $color-main);
+		background-position: 0 100%;
+		background-size: 100% .05em;
+		background-repeat: no-repeat;
+		transition: .3s;
+		&:active,
+		&:hover {
+			color: #fff;
+			background-size: 100% 100%;
+		}
+	}
+	*:first-child {
+		margin-top: 0;
+	}
+	*:last-child {
+		margin-bottom: 0;
+	}
+	*.align-left {
+		float: left;
+		margin-right: 5rem;
+	}
+	*.align-right {
+		float: right;
+		margin-right: 5rem;
+	}
+	table {
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: #dadada;
+        display: block;
+        overflow-x: auto;
+		max-width: 100%;
+		font-size: 1.4rem;
+
+        th, td {
+            padding: 2rem;
+            text-align: left;
+        }
+        th {
+            background-color: $color-main;
+			color: #fff;
+        }
+        td {
+            background-color: #fff;
+			color: #000;
+        }
+    }
+}
+
+//Custom Styles Here
+@import 'components/header.scss';
+
+
+
+//ALWAYS END
+
+//Load Libs
+//@import 'app/libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css';
+//@import 'app/libs/magnific-popup/dist/magnific-popup.css';
+//@import 'build/scss/components/magnific-popup.scss';
+
+@media only screen and (max-width : 1430px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+	font-size: 9.5px;
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+	font-size: 9px;
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
+}
