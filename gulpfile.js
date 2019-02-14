@@ -131,9 +131,10 @@ gulp.task( 'scripts', () => {
 //********************************************************************//
 
 gulp.task( 'code', () => {
-	return gulp.src( 'app/*.html' )
+	return gulp.src( [ 'app/*.html', 'app/js/*.js' ] )
 	.pipe( browserSync.reload( { stream: true } ) )
 } )
+
 
 //********************************************************************//
 
@@ -164,7 +165,7 @@ gulp.task( 'full', () => {
 gulp.task( 'watch', () => {
     gulp.watch( 'build/scss/**/*.scss', gulp.parallel( 'styles' ) )
     gulp.watch( 'app/libs/**/*.js', gulp.parallel( 'scripts' ) )
-    gulp.watch( 'app/*.html', gulp.parallel( 'code' ) )
+    gulp.watch( [ 'app/*.html', 'app/js/*.js' ], gulp.parallel( 'code' ) )
 } )
 
 gulp.task( 'default', gulp.parallel( 'watch', 'styles', 'scripts', 'browser-sync' ) )

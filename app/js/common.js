@@ -101,6 +101,62 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     } () );
 
+    //*********************************************************//
+    //LAZY LOAD IMAGES
+    //*********************************************************//
+    ( function() {
+
+        const headerNav = document.querySelector( '.header__nav' );
+
+        let xDown = null;
+        let yDown = null;
+
+        function handleTouchStart( event ) {
+            if ( window.innerWidth > 640 ) { return; }
+            xDown = event.touches[ 0 ].clientX;
+            yDown = event.touches[ 0 ].clientY;
+        };
+
+        function handleTouchMove( event ) {
+            if ( ! xDown || ! yDown ) {
+                return;
+            }
+
+            const xUp = event.touches[ 0 ].clientX;
+            const yUp = event.touches[ 0 ].clientY;
+
+            const xDiff = xDown - xUp;
+            const yDiff = yDown - yUp;
+
+            if ( Math.abs( xDiff ) + Math.abs( yDiff ) > 30 ) { //to deal with to short swipes
+
+                if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+                    if ( xDiff > 0 ) {/* left swipe */
+                         headerNav.removeAttribute( 'active' );
+                    } else {/* right swipe */
+                        // alert( 'right!' );
+                         headerNav.setAttribute( 'active', '' );
+                    }
+                } else {
+                    if ( yDiff > 0 ) {/* up swipe */
+                        // alert( 'Up!' );
+                    } else { /* down swipe */
+                        // alert( 'Down!' );
+                    }
+                }
+                /* reset values */
+                xDown = null;
+                yDown = null;
+            }
+        };
+
+        headerNav.addEventListener( 'touchstart' , handleTouchStart, false );
+        headerNav.addEventListener( 'touchmove' , handleTouchMove, false );
+
+    } () );
+
+
+
 
     //*********************************************************//
     //HEADER SLIDER
