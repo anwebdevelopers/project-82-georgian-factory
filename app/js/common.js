@@ -49,6 +49,58 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     // } () );
 
 
+    ( function() {
+
+        $( '[ data-tabs-buttons ]' ).each( function() {
+            // const buttonsChildrens = $( this ).children( '[ data-tabs-button ]' );
+            // if ( ! $.grep( buttonsChildrens, function( item ) { return item.hasAttribute( 'active' ) } ).length ) {
+            //     console.log(buttonsChildrens.first());
+            //     buttonsChildrens.first().attr( 'active', '' );
+            // }
+            $( this ).on( 'click', '[ data-tabs-button ]', function() {
+
+                $( this ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+
+                const tabsSection = $( '[ data-tabs-section="' + $( this ).attr( 'data-tabs-button' ) + '" ]' );
+
+                if ( tabsSection ) {
+                    tabsSection.attr( 'active', '' ).siblings().removeAttr( 'active' );
+                }
+
+            } );
+        } );
+
+    } () );
+
+
+    ( function() {
+
+        $( '.header__menu-category-item' ).on( 'click', '[ data-tabs-button ]', function() {
+            $( '.header__category, .header__button-menu-site' ).attr( 'active', '' );
+
+            if ( window.innerWidth <= 640 ) {
+                $( '.header__nav' ).removeAttr( 'active' );
+            }
+        } );
+
+
+        $( '.header__button-menu-site' ).on( 'click', function() {
+
+            if ( this.hasAttribute( 'active' ) ) {
+
+                $( this ).removeAttr( 'active' );
+
+                $( '.header__category, .header__menu-category-item [ data-tabs-button ], .header__category-item' ).removeAttr( 'active' );
+
+                if ( window.innerWidth <= 640 ) {
+                    $( '.header__nav' ).removeAttr( 'active' );
+                }
+            }
+
+        } );
+
+    } () );
+
     //*********************************************************//
     //LAZY LOAD IMAGES
     //*********************************************************//
@@ -102,11 +154,12 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     } () );
 
     //*********************************************************//
-    //LAZY LOAD IMAGES
+    //SWIPE MOBILE CATEGORIES MENU
     //*********************************************************//
     ( function() {
 
-        const headerNav = document.querySelector( '.header__nav' );
+        const headerNav = document.querySelector( '.header__nav' ),
+            headerButtonMenuCategory = document.querySelector( '.header__button-menu-category' );
 
         let xDown = null;
         let yDown = null;
@@ -133,9 +186,11 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                 if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
                     if ( xDiff > 0 ) {/* left swipe */
                          headerNav.removeAttribute( 'active' );
+                         headerButtonMenuCategory.removeAttribute( 'active' );
                     } else {/* right swipe */
                         // alert( 'right!' );
                          headerNav.setAttribute( 'active', '' );
+                         headerButtonMenuCategory.setAttribute( 'active', '' );
                     }
                 } else {
                     if ( yDiff > 0 ) {/* up swipe */
@@ -154,6 +209,25 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         headerNav.addEventListener( 'touchmove' , handleTouchMove, false );
 
     } () );
+
+    //*********************************************************//
+    //CLICK MOBILE CATEGORIES MENU
+    //*********************************************************//
+    ( function() {
+
+         document.querySelector( '.header__button-menu-category' ).addEventListener( 'click', function( event ) {
+             const headerNav = document.querySelector( '.header__nav' );
+             if (  event.target.hasAttribute( 'active' ) ) {
+                 event.target.removeAttribute( 'active' );
+                 headerNav.removeAttribute( 'active' );
+             } else {
+                 event.target.setAttribute( 'active', '' );
+                 headerNav.setAttribute( 'active', '' );
+             }
+         } );
+
+    } () );
+
 
 
 

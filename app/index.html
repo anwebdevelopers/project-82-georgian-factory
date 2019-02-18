@@ -44,61 +44,98 @@
 
 					</div>
 					<div class="header__switch-menu-category" data-tabs-buttons>
-						<button active>Ж</button>
-						<button>М</button>
+						<button data-tabs-button="male" active type="button">Ж</button>
+						<button data-tabs-button="female" type="button">М</button>
 					</div>
 					<button type="button" class="header__button-menu-category"></button>
 					<div class="header__menu-category" data-tabs-sections>
-						<ul class="header__menu-category-item">
-							<li><a href="#">Новинки</a></li>
-							<li><a href="#">Одежда</a></li>
-							<li><a href="#">Обувь</a></li>
-							<li><a href="#">Аксессуары</a></li>
-							<li><a href="#">Распродажа</a></li>
-						</ul>
-						<ul class="header__menu-category-item">
-							<li><a href="#">Новинки</a></li>
-							<li><a href="#">Одежда</a></li>
-							<li><a href="#">Обувь</a></li>
-							<li><a href="#">Аксессуары</a></li>
-							<li><a href="#">Распродажа</a></li>
-						</ul>
+						<div class="header__menu-category-item" data-tabs-section="male" data-tabs-buttons active>
+							<button data-tabs-button="male-novelty" type="button">Новинки</button>
+							<button data-tabs-button="male-clothes" type="button">Одежда</button>
+							<button data-tabs-button="male-footwear" type="button">Обувь</button>
+							<button data-tabs-button="male-accessories" type="button">Аксессуары</button>
+							<button data-tabs-button="male-sale" type="button">Распродажа</button>
+						</div>
+						<div class="header__menu-category-item" data-tabs-section="female" data-tabs-buttons>
+							<button data-tabs-button="female-novelty" type="button">Новинки</button>
+							<button data-tabs-button="female-clothes" type="button">Одежда</button>
+							<button data-tabs-button="female-footwear" type="button">Обувь</button>
+							<button data-tabs-button="afemale-ccessories" type="button">Аксессуары</button>
+							<button data-tabs-button="female-sale" type="button">Распродажа</button>
+						</div>
 					</div>
 				</div>
 
 				<div class="header__main">
 					<div class="header__category">
-						<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
-							<h3 class="header__category-type-title">Тип одежды</h3>
-							<ul class="header__category-type-list">
-								<li><a href="#">Все категории</a></li>
-								<li><a href="#">Платье</a></li>
-								<li><a href="#">Брюки</a></li>
-								<li><a href="#">Рубашка</a></li>
-								<li><a href="#">Юбки</a></li>
-								<li><a href="#">Пальто Джинсы</a></li>
-							</ul>
-						</div>
-						<div class="header__category-brand" data-lazy-load="img/bg-main.jpg">
-							<h3 class="header__category-brand-title">Тип одежды</h3>
-							<ul class="header__category-brand-list">
-								<li><a href="#">Все бренды</a></li>
-								<li><a href="#">Бренд</a></li>
-								<li><a href="#">Бренд</a></li>
-								<li><a href="#">Бренд</a></li>
-								<li><a href="#">Бренд</a></li>
-							</ul>
-						</div>
-						<div class="header__category-content">
-							<figure class="header__category-content-background">
-								<img data-lazy-load="img/bg-category-content.png" src="img/0.svg" alt="">
-							</figure>
-							<h3 class="header__category-content-title">Georgian Vogue</h3>
-							<div class="header__category-content-text">
-								<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+						<div class="header__category-item" data-tabs-section="male-novelty">
+							<div class="header__category-content">
+								<figure class="header__category-content-background">
+									<img data-lazy-load="img/bg-category-content1.png" src="img/0.svg" alt="">
+								</figure>
+								<h3 class="header__category-content-title">Georgian Vogue</h3>
+								<div class="header__category-content-text">
+									<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+								</div>
+								<div class="header__category-content-button">
+									<a href="#" class="button">Коллекция</a>
+								</div>
 							</div>
-							<div class="header__category-content-button">
-								<a href="#" class="button">Коллекция</a>
+							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
+								<h3 class="header__category-type-title">Тип одежды</h3>
+								<ul class="header__category-type-list">
+									<li><a href="#">Все категории</a></li>
+									<li><a href="#">Платье</a></li>
+									<li><a href="#">Брюки</a></li>
+									<li><a href="#">Рубашка</a></li>
+									<li><a href="#">Юбки</a></li>
+									<li><a href="#">Пальто Джинсы</a></li>
+								</ul>
+							</div>
+							<div class="header__category-brand" data-lazy-load="img/bg-main.jpg">
+								<h3 class="header__category-brand-title">Бренды</h3>
+								<ul class="header__category-brand-list">
+									<li><a href="#">Все бренды</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="header__category-item" data-tabs-section="male-clothes">
+							<div class="header__category-content">
+								<figure class="header__category-content-background">
+									<img data-lazy-load="img/bg-category-content2.png" src="img/0.svg" alt="">
+								</figure>
+								<h3 class="header__category-content-title">Georgian Vogue</h3>
+								<div class="header__category-content-text">
+									<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+								</div>
+								<div class="header__category-content-button">
+									<a href="#" class="button">Коллекция</a>
+								</div>
+							</div>
+							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
+								<h3 class="header__category-type-title">Тип одежды</h3>
+								<ul class="header__category-type-list">
+									<li><a href="#">Все категории</a></li>
+									<li><a href="#">Платье</a></li>
+									<li><a href="#">Брюки</a></li>
+									<li><a href="#">Рубашка</a></li>
+									<li><a href="#">Юбки</a></li>
+									<li><a href="#">Пальто Джинсы</a></li>
+								</ul>
+							</div>
+							<div class="header__category-brand" data-lazy-load="img/bg-main.jpg">
+								<h3 class="header__category-brand-title">Бренды</h3>
+								<ul class="header__category-brand-list">
+									<li><a href="#">Все бренды</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+								</ul>
 							</div>
 						</div>
 					</div>
