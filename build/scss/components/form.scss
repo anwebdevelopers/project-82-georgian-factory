@@ -1,0 +1,22 @@
+.input-text {
+    @include input;
+    color: inherit;
+    height: 6rem;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid currentColor;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1));
+    background-position: 0 0;
+    background-size: 100% 0;
+    background-repeat: no-repeat;
+    transition: .3s;
+    &:focus {
+
+    }
+    &:hover, &:active, &:focus {
+        padding: 2rem 1.5rem;
+        background-size: 100% 100%;
+    }
+}

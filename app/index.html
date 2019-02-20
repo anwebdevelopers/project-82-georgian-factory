@@ -39,10 +39,57 @@
 		<div class="header__container container">
 			<div class="header__box">
 				<div class="header__nav">
-					<button type="button" class="header__button-menu-site"></button>
-					<div class="header__menu-site">
-
+					<div class="header__menu">
+						<div class="header__menu-container container">
+							<div class="header__menu-box" data-lazy-load="img/bg-menu.png">
+								<ul class="header__menu-nav" data-lazy-load="img/bg-main.jpg">
+									<li><a href="#">Информация о компании</a></li>
+									<li><a href="#">Обратная связь для дизайнеров (инвесторов)</a></li>
+									<li><a href="#">Помощь для покупателей</a></li>
+									<li><a href="#">Информация о доставке и возврате</a></li>
+									<li><a href="#">Размерная таблица</a></li>
+									<li><a href="#">Правила и условия</a></li>
+									<li><a href="#">FAQ</a></li>
+								</ul>
+								<div class="header__menu-feedback">
+									<div class="header__menu-contacts">
+										<h3 class="header__menu-title title">Контакты</h3>
+										<div class="header__menu-links">
+											<a class="header__menu-links-item" href="tel:+89098009090">
+												<div class="header__menu-links-icon">
+													<svg><use href="#icon-phone"></use></svg>
+												</div>
+												<div class="header__menu-links-text">+8 909 800 90 90</div>
+											</a>
+											<a class="header__menu-links-item" href="mailto:Emai@email">
+												<div class="header__menu-links-icon">
+													<svg><use href="#icon-mail"></use></svg>
+												</div>
+												<div class="header__menu-links-text">Emai@email</div>
+											</a>
+										</div>
+										<ul class="header__menu-social">
+											<li><a href="#">vk</a></li>
+											<li><a href="#">fb</a></li>
+											<li><a href="#">inst</a></li>
+										</ul>
+									</div>
+									<div class="header__menu-callback">
+										<h3 class="header__menu-title title">Свяжитесь с нами</h3>
+										<form class="header__menu-form">
+											<input type="text" class="header__menu-form-input input-text" placeholder="Ваше имя">
+											<input type="email" class="header__menu-form-input input-text" placeholder="Ваш email">
+											<input type="tel" class="header__menu-form-input input-text" placeholder="Ваш телефон">
+											<div class="header__menu-form-submit">
+												<button type="button" class="button">Связаться с нами</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
+					<button type="button" class="header__button-menu"></button>
 					<div class="header__switch-menu-category" data-tabs-buttons>
 						<button data-tabs-button="male" active type="button">Ж</button>
 						<button data-tabs-button="female" type="button">М</button>
@@ -82,9 +129,9 @@
 								</div>
 							</div>
 							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
-								<h3 class="header__category-type-title">Тип одежды</h3>
+								<h3 class="header__category-type-title">Тип одежды 1</h3>
 								<ul class="header__category-type-list">
-									<li><a href="#">Все категории</a></li>
+									<li><a href="#">Все женские категории</a></li>
 									<li><a href="#">Платье</a></li>
 									<li><a href="#">Брюки</a></li>
 									<li><a href="#">Рубашка</a></li>
@@ -117,9 +164,44 @@
 								</div>
 							</div>
 							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
-								<h3 class="header__category-type-title">Тип одежды</h3>
+								<h3 class="header__category-type-title">Тип одежды 2</h3>
 								<ul class="header__category-type-list">
-									<li><a href="#">Все категории</a></li>
+									<li><a href="#">Все женские категории</a></li>
+									<li><a href="#">Платье</a></li>
+									<li><a href="#">Брюки</a></li>
+									<li><a href="#">Рубашка</a></li>
+									<li><a href="#">Юбки</a></li>
+									<li><a href="#">Пальто Джинсы</a></li>
+								</ul>
+							</div>
+							<div class="header__category-brand" data-lazy-load="img/bg-main.jpg">
+								<h3 class="header__category-brand-title">Бренды</h3>
+								<ul class="header__category-brand-list">
+									<li><a href="#">Все бренды</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+									<li><a href="#">Бренд</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="header__category-item" data-tabs-section="female-clothes">
+							<div class="header__category-content">
+								<figure class="header__category-content-background">
+									<img data-lazy-load="img/bg-category-content2.png" src="img/0.svg" alt="">
+								</figure>
+								<h3 class="header__category-content-title">Georgian Vogue</h3>
+								<div class="header__category-content-text">
+									<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+								</div>
+								<div class="header__category-content-button">
+									<a href="#" class="button">Коллекция</a>
+								</div>
+							</div>
+							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
+								<h3 class="header__category-type-title">Тип одежды 2</h3>
+								<ul class="header__category-type-list">
+									<li><a href="#">Все мужские категории</a></li>
 									<li><a href="#">Платье</a></li>
 									<li><a href="#">Брюки</a></li>
 									<li><a href="#">Рубашка</a></li>
@@ -156,16 +238,16 @@
 						</div>
 						<div class="header__buttons">
 							<button type="button">
-								<svg><use href="#icon-search"/></svg>
+								<svg><use href="#icon-search"></use></svg>
 							</button>
 							<a href="account.html">
-								<svg><use href="#icon-account"/></svg>
+								<svg><use href="#icon-account"></use></svg>
 							</a>
 							<a href="favorites.html">
-								<svg><use href="#icon-favorites"/></svg>
+								<svg><use href="#icon-favorites"></use></svg>
 							</a>
 							<a href="basket.html">
-								<svg><use href="#icon-basket"/></svg>
+								<svg><use href="#icon-basket"></use></svg>
 							</a>
 						</div>
 					</div>
@@ -225,6 +307,13 @@
 			<symbol id="icon-basket" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M4.93225 4.38983C4.93225 2.49153 6.76276 1 9.00005 1C11.2373 1 13 2.49153 13 4.38983" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 				<path d="M17 15.2373H1L1.67797 5.06778H16.322L17 15.2373Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</symbol>
+			<symbol id="icon-phone" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M16 12.2264V14.4867C16 15.3155 15.3219 15.9936 14.4931 15.9936C14.4178 15.9936 14.4178 15.9936 14.3424 15.9936C12.0067 15.7676 9.82172 14.9388 7.86275 13.6579C6.05447 12.5278 4.47223 10.9455 3.34205 9.13725C2.06119 7.17828 1.23239 4.99328 1.00636 2.65759C0.931014 1.82879 1.53377 1.07534 2.36257 1C2.43791 1 2.43791 1 2.51326 1H4.77361C5.52705 1 6.20516 1.52741 6.2805 2.28086C6.35585 3.03431 6.58188 3.71242 6.80792 4.39052C7.03395 4.99328 6.88326 5.59604 6.43119 5.97277L5.52705 6.95225C6.58188 8.83587 8.16413 10.4181 10.0478 11.4729L11.0272 10.4935C11.4793 10.1167 12.0821 9.96605 12.6095 10.1921C13.2876 10.4181 13.9657 10.6442 14.7191 10.7195C15.4726 10.7948 16 11.4729 16 12.2264Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+			</symbol>
+			<symbol id="icon-mail" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M2.5 1H14.5C15.325 1 16 1.675 16 2.5V11.5C16 12.325 15.325 13 14.5 13H2.5C1.675 13 1 12.325 1 11.5V2.5C1 1.675 1.675 1 2.5 1Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M16 2.5L8.5 7.75L1 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 			</symbol>
 		</svg>
 	</div>

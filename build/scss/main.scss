@@ -8,29 +8,33 @@
 *:focus:-ms-input-placeholder      {color: transparent}
 
 *::-webkit-input-placeholder {
-	color: $color-main;
+	color: inherit;
 	opacity: 1;
+	transition: .3s;
 }
 *:-moz-placeholder {
-	color: $color-main;
+	color: inherit;
 	opacity: 1;
+	transition: .3s;
 }
 *::-moz-placeholder {
-	color: $color-main;
+	color: inherit;
 	opacity: 1;
+	transition: .3s;
 }
 
 *:-ms-input-placeholder {
-	color: $color-main;
+	color: inherit;
 	opacity: 1;
+	transition: .3s;
 }
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-	color: $color-main;
+	color: inherit;
 }
 body input:required:valid,
 body textarea:required:valid {
-	color: $color-main;
+	color: inherit;
 }
 *,
 *:before,
@@ -58,11 +62,16 @@ body {
     -webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	overflow-x: hidden;
 }
 .container {
-	max-width: 1430px;
+	// max-width: 1430px;
+	max-width: calc( 1280px + 8% );
 	padding: 0 4%;
 	margin: 0 auto;
+}
+.container__inner {
+	// padding: 0 4%;
 }
 .clearfix:after {
 	content: '';
@@ -86,6 +95,16 @@ body {
 		border-color: #fff;
 		background-size: 100% 100%;
 	}
+}
+.title {
+	margin: 0;
+	font-size: 4.5rem;
+	font-weight: 400;
+	line-height: 1.1;
+	letter-spacing: 0.03em;
+	font-family: 'Bebas Neue';
+	text-align: center;
+	color: $color-main;
 }
 .text {
 	* {
@@ -170,6 +189,7 @@ body {
 }
 
 //Custom Styles Here
+@import 'components/form.scss';
 @import 'components/header.scss';
 
 
