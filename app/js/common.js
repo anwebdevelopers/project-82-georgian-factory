@@ -262,40 +262,50 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //*********************************************************//
     //HEADER SLIDER
     //*********************************************************//
-    // $( '.slider' ).addClass( 'owl-carousel' ).owlCarousel( {
-    //     loop: true,
-    //     items: 1,
-    //     nav: true,
-    //     navText: '',
-    //     autoplayTimeout: 5000,
-    //     autoplay: true,
-    //     smartSpeed: 1200,
-    //     autoHeight: true,
-    //     responsiveClass: true,
-    //     responsive: {
-    //         0: {
-    //             items: 2
-    //         },
-    //         481: {
-    //             items: 3
-    //         },
-    //         769: {
-    //             items: 4
-    //         },
-    //         993: {
-    //             items: 5
-    //         }
-    //     },
-    //     onInitialize: function( event ) {
-    //         $( event.target ).find( '.about__item' ).each( function() {
-    //             $( this ).attr( 'data-item-counter', $( this ).index() + 1 )
-    //         } );
-    //     },
-    //     onInitialized: function( event ) {
-    //         $( event.target ).append( '<div class="about__counter"><div class="about__counter-current">' + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' ) + '</div><div class="about__counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
-    //     },
-    //     onTranslated: function( event ) {
-    //         $( event.target ).find( '.about__counter-current' ).text( $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' ) )
-    //     }
-    // } );
-});
+    ( function() {
+        $( '.header__text' ).wrapInner( '<div class="header__slider"></div>' ).find( '.header__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            items: 1,
+            nav: true,
+            navText: '',
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1000,
+            // autoHeight: true,
+            navContainer: '.header__slider-nav',
+            dotsContainer: '.header__slider-dots',
+            onInitialize: function( event ) {
+                $( event.target ).find( '.header__text-item' ).each( function() {
+                    $( this ).attr( 'data-item-counter', $( this ).index() )
+                } );
+
+                $( '.header__background' ).attr( 'active', '' );
+
+                $( '.header__bottom' ).append( '<div class="header__slider-nav"></div><div class="header__slider-dots"></div>' );
+            },
+            onInitialized: function( event ) {
+                const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
+
+                $( '.header__bottom' ).append( '<div class="header__slider-counter"><div class="header__slider-counter-current">' + ( itemIndex + 1 ) + '</div><div class="header__slider-counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
+
+                $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+            },
+            onTranslate: function( event ) {
+                const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
+
+                $( '.header__slider-counter' ).find( '.header__slider-counter-current' ).text( itemIndex + 1 );
+
+                $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+            }
+        } );
+
+        // $( window ).on( 'load, resize', function() {
+        //     if ( $('.header__middle').css('display') === 'flex') {
+        //         $( '.header__text' ).css( 'width', document.querySelector( '.header__middle' ).offsetWidth - (document.querySelector( '.header__social' ).offsetWidth + + getComputedStyle(document.querySelector( '.header__social' )).marginLeft.replace('px', '') ) + 'px' )
+        //     } else {
+        //         $( '.header__text' ).css( 'width', '')
+        //     }
+        // } )
+    } () );
+
+} );
