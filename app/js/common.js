@@ -121,60 +121,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         } );
     } () );
 
-    //*********************************************************//
-    //LAZY LOAD IMAGES
-    //*********************************************************//
-    ( function() {
 
-        const lazyLoadImg = new IntersectionObserver(
-
-            function( entries ) {
-
-                for ( let i = 0; i < entries.length; i++  ) {
-
-                    const entry = entries[ i ];
-                    const target = entry.target;
-
-                    if ( entry.isIntersecting && target.hasAttribute( 'data-lazy-load' ) ) {
-
-                        if ( target.nodeName === 'IMG' ) {
-
-                            target.setAttribute( 'src', target.getAttribute( 'data-lazy-load' ) );
-                        } else if ( target.nodeName === 'SOURCE' ) {
-
-                            target.setAttribute( 'srcset', target.getAttribute( 'data-lazy-load' ) );
-                        } else {
-
-                            target.style.backgroundImage = 'url(' + target.getAttribute( 'data-lazy-load' ) + ')';
-                        }
-
-                        target.removeAttribute( 'data-lazy-load' )
-
-                        lazyLoadImg.unobserve( target );
-
-                        target.style.opacity = 1;
-                    }
-                }
-            },
-            {
-                root: null,
-                rootMargin: ( window.innerHeight / 2 ) + 'px ' + ( window.innerWidth / 2 ) + 'px',
-                threshold: [ 0 ],
-            }
-        );
-
-        // Start observing an element
-        const lazyLoadImgElems = document.querySelectorAll( '[ data-lazy-load ]' );
-
-        for ( let i = 0; i < lazyLoadImgElems.length; i++  ) {
-
-            lazyLoadImg.observe( lazyLoadImgElems[ i ] );
-
-            lazyLoadImgElems[ i ].style.opacity = 0;
-            lazyLoadImgElems[ i ].style.transition = '.3s';
-        }
-
-    } () );
 
     //*********************************************************//
     //SWIPE MOBILE CATEGORIES MENU
@@ -268,7 +215,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             items: 1,
             nav: true,
             navText: '',
-            autoplayTimeout: 5000,
+            autoplayTimeout: 10000,
             autoplay: true,
             smartSpeed: 1000,
             // autoHeight: true,
@@ -299,6 +246,14 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
+
+        //*********************************************************//
+        //HEADER SLIDER
+        //*********************************************************//
+
+
+
+
         // $( window ).on( 'load, resize', function() {
         //     if ( $('.header__middle').css('display') === 'flex') {
         //         $( '.header__text' ).css( 'width', document.querySelector( '.header__middle' ).offsetWidth - (document.querySelector( '.header__social' ).offsetWidth + + getComputedStyle(document.querySelector( '.header__social' )).marginLeft.replace('px', '') ) + 'px' )
@@ -308,4 +263,112 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         // } )
     } () );
 
+    ( function() {
+        $( '.novelty__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            items: 3,
+            nav: true,
+            navText: '',
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1000,
+            // autoHeight: true,
+            navContainer: '.novelty__nav',
+            dotsContainer: '.novelty__dots',
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                361: {
+                    items: 2
+                },
+                769: {
+                    items: 3
+                },
+                993: {
+                    items: 4
+                }
+            },
+            onInitialize: function( event ) {
+                // $( event.target ).find( '.header__text-item' ).each( function() {
+                //     $( this ).attr( 'data-item-counter', $( this ).index() )
+                // } );
+
+                // $( '.header__background' ).attr( 'active', '' );
+
+                $( '.novelty__title' ).wrap('<div class="novelty__head"></div>');
+                $('.novelty__head').append( '<div class="novelty__dots"></div><div class="novelty__nav"></div>' );
+            },
+            onInitialized: function( event ) {
+                // const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
+                //
+                // $( '.header__bottom' ).append( '<div class="header__slider-counter"><div class="header__slider-counter-current">' + ( itemIndex + 1 ) + '</div><div class="header__slider-counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
+                //
+                // $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+            },
+            onTranslate: function( event ) {
+                // const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
+                //
+                // $( '.header__slider-counter' ).find( '.header__slider-counter-current' ).text( itemIndex + 1 );
+                //
+                // $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+            }
+        } );
+    } () );
+
+    //*********************************************************//
+    //LAZY LOAD IMAGES
+    //*********************************************************//
+    ( function() {
+
+        const lazyLoadImg = new IntersectionObserver(
+
+            function( entries ) {
+
+                for ( let i = 0; i < entries.length; i++  ) {
+
+                    const entry = entries[ i ];
+                    const target = entry.target;
+
+                    if ( entry.isIntersecting && target.hasAttribute( 'data-lazy-load' ) ) {
+
+                        if ( target.nodeName === 'IMG' ) {
+
+                            target.setAttribute( 'src', target.getAttribute( 'data-lazy-load' ) );
+                        } else if ( target.nodeName === 'SOURCE' ) {
+
+                            target.setAttribute( 'srcset', target.getAttribute( 'data-lazy-load' ) );
+                        } else {
+
+                            target.style.backgroundImage = 'url(' + target.getAttribute( 'data-lazy-load' ) + ')';
+                        }
+
+                        target.removeAttribute( 'data-lazy-load' )
+
+                        lazyLoadImg.unobserve( target );
+
+                        target.style.opacity = 1;
+                    }
+                }
+            },
+            {
+                root: null,
+                rootMargin: ( window.innerHeight / 2 ) + 'px ' + ( window.innerWidth / 2 ) + 'px',
+                threshold: [ 0 ],
+            }
+        );
+
+        // Start observing an element
+        const lazyLoadImgElems = document.querySelectorAll( '[ data-lazy-load ]' );
+
+        for ( let i = 0; i < lazyLoadImgElems.length; i++  ) {
+
+            lazyLoadImg.observe( lazyLoadImgElems[ i ] );
+
+            lazyLoadImgElems[ i ].style.opacity = 0;
+            lazyLoadImgElems[ i ].style.transition = '.5s';
+        }
+
+    } () );
 } );

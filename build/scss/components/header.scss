@@ -689,6 +689,7 @@
             max-height: 100%;
             width: auto;
             height: auto;
+            fill: rgba(0,0,0,0);
         }
     }
 }
@@ -761,13 +762,15 @@
 }
 
 .header__bottom {
-    margin-top: 9rem;
+    margin-top: 6rem;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .header__slider-nav {
-    margin-right: auto;
+    margin: 3rem auto 0 0;
+    padding-right: 10%;
 
     display: flex;
     .owl-prev,
@@ -817,7 +820,7 @@
 }
 .header__slider-dots {
     flex: 0 1 auto;
-    margin-right: 10%;
+    margin: 3rem 10% 0 0;
 
     display: flex;
     flex-wrap: wrap;
@@ -839,6 +842,7 @@
 }
 .header__slider-counter {
     flex: 0 0 auto;
+    margin-top: 3rem;
     font-size: 3.5rem;
     line-height: .8;
     font-family: 'Bebas Neue';
@@ -846,6 +850,7 @@
     display: flex;
     .header__slider-counter-current {
         margin-right: .2em;
+        min-width: .4em;
     }
     .header__slider-counter-current,
     .header__slider-counter-amount {

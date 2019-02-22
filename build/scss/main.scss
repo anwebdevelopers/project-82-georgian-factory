@@ -65,18 +65,15 @@ body {
 	overflow-x: hidden;
 }
 .container {
-	// max-width: 1430px;
 	max-width: calc( 1280px + 8% );
 	padding: 0 4%;
 	margin: 0 auto;
 }
-.container__inner {
-	// padding: 0 4%;
-}
-.clearfix:after {
-	content: '';
-	display: table;
-	clear: both;
+.section {
+	padding: 5rem 0;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .button {
 	@include btn;
@@ -191,7 +188,8 @@ body {
 //Custom Styles Here
 @import 'components/form.scss';
 @import 'components/header.scss';
-
+@import 'components/articles.scss';
+@import 'components/novelty.scss';
 
 
 //ALWAYS END

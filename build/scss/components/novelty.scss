@@ -1,0 +1,133 @@
+.novelty {
+
+}
+.novelty__head {
+    display: flex;
+    align-items: center;
+}
+.novelty__dots {
+    order: 0;
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    .owl-dot {
+        @include btn;
+        display: block;
+        flex: 0 0 auto;
+        width: .8rem;
+        height: .8rem;
+        &:not( :last-child ) {
+            margin-right: 2rem;
+        }
+        border: 2px solid currentColor;
+        border-radius: 50%;
+        &.active {
+            background-color: currentColor;
+        }
+    }
+}
+.novelty__title {
+    order: 1;
+    flex: 1 1 auto;
+    margin: 0 4rem;
+}
+.novelty__nav {
+    order: 2;
+    flex: 0 0 auto;
+
+    display: flex;
+    .owl-prev,
+    .owl-next {
+        @include btn;
+        display: block;
+        flex: 0 0 auto;
+        height: .8rem;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0 50%;
+        background-size: 100% 2px;
+        background-repeat: no-repeat;
+        transition: .3s;
+
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: .8rem;
+            height: .8rem;
+            border-left: 2px solid currentColor;
+            border-top: 2px solid currentColor;
+        }
+        &:active,
+        &:hover {
+            transform: scaleX(1.1);
+        }
+    }
+    .owl-prev {
+        width: 1.6rem;
+        margin-right: 1.5rem;
+        transform-origin: right center;
+        &:before {
+            left: 0;
+            transform: rotate( -45deg );
+        }
+    }
+    .owl-next {
+        width: 3.2rem;
+        transform-origin: left center;
+        &:before {
+            right: 0;
+            transform: rotate( 135deg );
+        }
+    }
+}
+
+@media only screen and (max-width : 1430px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    .novelty__head {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .novelty__title {
+        order: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .novelty__dots,
+    .novelty__nav {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+    .novelty__head {
+        display: block;
+    }
+    .novelty__title {
+        width: auto;
+    }
+    .novelty__dots,
+    .novelty__nav {
+        justify-content: center;
+    }
+}
