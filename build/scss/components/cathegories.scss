@@ -1,0 +1,115 @@
+.cathegories {
+
+}
+
+.cathegories__head {
+    display: flex;
+    align-items: center;
+}
+.cathegories__switch {
+    order: 0;
+    flex: 0 0 auto;
+
+    display: flex;
+    button {
+        @include btn;
+        // padding: .8rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.4rem;
+        line-height: 3rem;
+        font-weight: 700;
+        text-align: center;
+        color: inherit;
+        border: 1px solid $color-main;
+        background-image: linear-gradient(#fff, #fff);
+        background-position: 0 0;
+        background-size: 100% 0;
+        background-repeat: no-repeat;
+        transition: .3s;
+        &:active,
+        &:hover {
+            color: $color-main;
+            background-size: 100% 100%;
+        }
+        &[ active ] {
+            background-image: none;
+            color: #fff;
+            background-color: $color-main;
+            cursor: default;
+        }
+    }
+}
+.cathegories__title {
+    order: 1;
+    flex: 1 1 auto;
+    margin: 0 4rem;
+}
+.cathegories__box {
+
+}
+.cathegories__section {
+    display: none;
+    &[ active ] {
+        display: flex;
+    }
+}
+.no-js .cathegories__section {
+    display: flex;
+}
+
+@media only screen and (max-width : 1430px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    .cathegories__head {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .cathegories__title {
+        order: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .cathegories__switch {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+    .cathegories__head {
+        display: block;
+    }
+    .cathegories__title {
+        width: auto;
+    }
+    .cathegories__switch {
+        justify-content: center;
+    }
+
+    .cathegories__section {
+        &[ active ] {
+            display: block;
+        }
+    }
+    .no-js .cathegories__section {
+        display: block;
+    }
+}

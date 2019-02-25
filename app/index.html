@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 
 <head>
 
@@ -77,11 +77,17 @@
 									<div class="header__menu-callback">
 										<h3 class="header__menu-title title">Свяжитесь с нами</h3>
 										<form class="header__menu-form">
-											<input type="text" class="header__menu-form-input input-text" placeholder="Ваше имя">
-											<input type="email" class="header__menu-form-input input-text" placeholder="Ваш email">
-											<input type="tel" class="header__menu-form-input input-text" placeholder="Ваш телефон">
-											<div class="header__menu-form-submit">
-												<button type="button" class="button">Связаться с нами</button>
+											<div class="header__menu-form-input input-text">
+												<input type="text" placeholder="Ваше имя">
+											</div>
+											<div class="header__menu-form-input input-text">
+												<input type="email" placeholder="Ваш email">
+											</div>
+											<div class="header__menu-form-input input-text">
+												<input type="tel" placeholder="Ваш телефон">
+											</div>
+											<div class="header__menu-form-submit button">
+												<button type="submit">Связаться с нами</button>
 											</div>
 										</form>
 									</div>
@@ -91,12 +97,12 @@
 					</div>
 					<button type="button" class="header__button-menu"></button>
 					<div class="header__switch-menu-category" data-tabs-buttons>
-						<button data-tabs-button="male" active type="button">Ж</button>
+						<button data-tabs-button="male" type="button" active>Ж</button>
 						<button data-tabs-button="female" type="button">М</button>
 					</div>
 					<button type="button" class="header__button-menu-category"></button>
 					<div class="header__menu-category" data-tabs-sections>
-						<div class="header__menu-category-item" data-tabs-section="male" data-tabs-buttons active>
+						<div class="header__menu-category-item" data-tabs-section="male" data-tabs-buttons>
 							<button data-tabs-button="male-novelty" type="button">Новинки</button>
 							<button data-tabs-button="male-clothes" type="button">Одежда</button>
 							<button data-tabs-button="male-footwear" type="button">Обувь</button>
@@ -115,16 +121,13 @@
 				<div class="header__main">
 					<div class="header__category">
 						<div class="header__category-item" data-tabs-section="male-novelty">
-							<div class="header__category-content">
-								<figure class="header__category-content-background">
-									<img data-lazy-load="img/bg-category-content1.png" src="img/0.svg" alt="">
-								</figure>
+							<div class="header__category-content" data-lazy-load="img/bg-category-content1.png">
 								<h3 class="header__category-content-title">Georgian Vogue</h3>
 								<div class="header__category-content-text">
 									<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
 								</div>
-								<div class="header__category-content-button">
-									<a href="#" class="button">Коллекция</a>
+								<div class="header__category-content-button button">
+									<a href="#">Коллекция</a>
 								</div>
 							</div>
 							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
@@ -150,16 +153,13 @@
 							</div>
 						</div>
 						<div class="header__category-item" data-tabs-section="male-clothes">
-							<div class="header__category-content">
-								<figure class="header__category-content-background">
-									<img data-lazy-load="img/bg-category-content2.png" src="img/0.svg" alt="">
-								</figure>
+							<div class="header__category-content" data-lazy-load="img/bg-category-content2.png">
 								<h3 class="header__category-content-title">Georgian Vogue</h3>
 								<div class="header__category-content-text">
 									<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
 								</div>
-								<div class="header__category-content-button">
-									<a href="#" class="button">Коллекция</a>
+								<div class="header__category-content-button button">
+									<a href="#">Коллекция</a>
 								</div>
 							</div>
 							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
@@ -185,16 +185,13 @@
 							</div>
 						</div>
 						<div class="header__category-item" data-tabs-section="female-clothes">
-							<div class="header__category-content">
-								<figure class="header__category-content-background">
-									<img data-lazy-load="img/bg-category-content2.png" src="img/0.svg" alt="">
-								</figure>
+							<div class="header__category-content" data-lazy-load="img/bg-category-content2.png">
 								<h3 class="header__category-content-title">Georgian Vogue</h3>
 								<div class="header__category-content-text">
 									<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
 								</div>
-								<div class="header__category-content-button">
-									<a href="#" class="button">Коллекция</a>
+								<div class="header__category-content-button button">
+									<a href="#">Коллекция</a>
 								</div>
 							</div>
 							<div class="header__category-type" data-lazy-load="img/bg-main.jpg">
@@ -266,8 +263,8 @@
 									<p> Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</p>
 								</div>
 							</div>
-							<div class="header__button">
-								<a href="#" class="button">Коллекция</a>
+							<div class="header__button button">
+								<a href="#">Коллекция</a>
 							</div>
 						</div>
 					</div>
@@ -336,39 +333,41 @@
 		</div>
 	</section>
 
-	<section class="brands section">
+	<section class="section">
 		<div class="container">
 			<h2 class="title">БРЕНДЫ</h2>
-			<div class="articles">
-				<a href="#" class="articles__item">
-					<figure class="articles__item-img">
+			<div class="brands">
+				<a href="#" class="brands__item">
+					<figure class="brands__item-img">
 						<img data-lazy-load="img/img-big.png" src="img/0.svg" alt="">
 					</figure>
-					<figure class="articles__item-logo">
+					<figure class="brands__item-logo">
 						<img data-lazy-load="img/img-logo.png" src="img/0.svg" alt="">
 					</figure>
-					<h3 class="articles__item-title">Бренд</h3>
+					<h3 class="brands__item-title" data-pseudo-text="Подробнее →">Бренд</h3>
 				</a>
-				<a href="#" class="articles__item">
-					<figure class="articles__item-img">
+				<a href="#" class="brands__item">
+					<figure class="brands__item-img">
 						<img data-lazy-load="img/img-5.png" src="img/0.svg" alt="">
 					</figure>
-					<figure class="articles__item-logo">
+					<figure class="brands__item-logo">
 						<img data-lazy-load="img/img-logo.png" src="img/0.svg" alt="">
 					</figure>
-					<h3 class="articles__item-title">Бренд</h3>
+					<h3 class="brands__item-title" data-pseudo-text="Подробнее →">Бренд</h3>
 				</a>
-				<a href="#" class="articles__item">
-					<figure class="articles__item-img">
+				<a href="#" class="brands__item">
+					<figure class="brands__item-img">
 						<img data-lazy-load="img/img-6.png" src="img/0.svg" alt="">
 					</figure>
-					<figure class="articles__item-logo">
+					<figure class="brands__item-logo">
 						<img data-lazy-load="img/img-logo.png" src="img/0.svg" alt="">
 					</figure>
-					<h3 class="articles__item-title">Бренд</h3>
+					<h3 class="brands__item-title" data-pseudo-text="Подробнее →">Бренд</h3>
 				</a>
 			</div>
-			<a href="#" class="button">Все бренды</a>
+			<div class="button button_color_dark button_align_center">
+				<a href="#">Все бренды</a>
+			</div>
 		</div>
 	</section>
 
@@ -376,44 +375,57 @@
 		<div class="container">
 			<h2 class="title">Оставайтесь на с связи с georgian vogue</h2>
 			<div class="text">
-				<p>Введите свой адрес электронной почты, если хотите получать информацию обо всех новинках и специальных предложениях</p>
+				<p>Введите свой адрес электронной почты, если хотите получать информацию обо <br>всех новинках и специальных предложениях</p>
 			</div>
 			<form class="mailing__form">
 				<div class="mailing__form-checkboxes">
-					<label class="mailing__form-check">
-						<input type="checkbox" name="mailing-check">
+					<label class="mailing__form-check input-check">
+						<input type="radio" name="mailing-check" checked>
 						<span>Для женщин</span>
 					</label>
-					<label class="mailing__form-check">
-						<input type="checkbox" name="mailing-check">
+					<label class="mailing__form-check input-check">
+						<input type="radio" name="mailing-check">
 						<span>Для мужчин</span>
 					</label>
-					<div class="mailing__form-footer">
-						<input type="email" class="mailing__form-input input-text" placeholder="Ваш email">
-						<button class="mailing__form-submit button" type="submit">Подписаться</button>
+				</div>
+				<div class="mailing__form-footer">
+					<div class="mailing__form-input input-text">
+						<input type="email" placeholder="Ваш email">
+					</div>
+					<div class="mailing__form-submit button">
+						<button type="submit">Подписаться</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</section>
 
-	<section class="collection" data-lazy-load="img/bg-collection.jpg">
+	<section class="collection section" data-lazy-load="img/bg-collection.jpg">
 		<div class="container">
 			<div class="collection__box">
-				<h2 class="title">Коллекция осень 2018</h2>
+				<h2 class="collection__title title">Коллекция осень 2018</h2>
 				<div class="text">
 					<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
 				</div>
-				<a href="#" class="button">В магазин</a>
+				<div class="collection__button button">
+					<a href="#">В магазин</a>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="cathegories section">
 		<div class="container">
-			<h2 class="title">Категории</h2>
+			<div class="cathegories__head">
+				<h2 class="cathegories__title title">Категории</h2>
+				<div class="cathegories__switch" data-tabs-buttons>
+					<button data-tabs-button="cathegories-male" type="button" active>Ж</button>
+					<button data-tabs-button="cathegories-female" type="button">М</button>
+				</div>
+			</div>
+
 			<div class="cathegories__box">
-				<div class="cathegories__section articles">
+				<div class="cathegories__section articles" data-tabs-section="cathegories-male">
 					<a href="#" class="articles__item">
 						<figure class="articles__item-img">
 							<img data-lazy-load="img/img-7.png" src="img/0.svg" alt="">
@@ -439,7 +451,7 @@
 						<h3 class="articles__item-title">Распродажа</h3>
 					</a>
 				</div>
-				<div class="cathegories__section articles">
+				<div class="cathegories__section articles" data-tabs-section="cathegories-female">
 					<a href="#" class="articles__item">
 						<figure class="articles__item-img">
 							<img data-lazy-load="img/img-11.png" src="img/0.svg" alt="">

@@ -76,21 +76,38 @@ body {
 	background-repeat: no-repeat;
 }
 .button {
-	@include btn;
-	padding: 1.5rem 3.4rem;
-	font-size: 1.4rem;
-	font-family: inherit;
-	border: 2px solid currentColor;
-	background-image: linear-gradient(#fff, #fff);
-	background-position: 0 0;
-	background-size: 100% 0;
-	background-repeat: no-repeat;
-	transition: .3s;
-	&:active,
-	&:hover {
-		color: $color-main;
-		border-color: #fff;
-		background-size: 100% 100%;
+	margin-top: 6rem;
+	a, button {
+		@include btn;
+		padding: 1.5rem 3.4rem;
+		font-size: 1.4rem;
+		font-family: inherit;
+		color: #fff;
+		border: 2px solid #fff;
+		background-image: linear-gradient(#fff, #fff);
+		background-position: 0 0;
+		background-size: 100% 0;
+		background-repeat: no-repeat;
+		transition: .3s;
+		&:active,
+		&:hover {
+			color: $color-main;
+			background-size: 100% 100%;
+		}
+	}
+	&.button_color_dark {
+		a, button {
+			color: $color-main;
+			border: 2px solid $color-main;
+			background-image: linear-gradient($color-main, $color-main);
+			&:active,
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+	&.button_align_center {
+		text-align: center;
 	}
 }
 .title {
@@ -101,9 +118,9 @@ body {
 	letter-spacing: 0.03em;
 	font-family: 'Bebas Neue';
 	text-align: center;
-	color: $color-main;
 }
 .text {
+	margin-top: 3rem;
 	* {
 		max-width: 100% !important;
 	}
@@ -189,8 +206,12 @@ body {
 @import 'components/form.scss';
 @import 'components/header.scss';
 @import 'components/articles.scss';
+@import 'components/brands.scss';
 @import 'components/novelty.scss';
-
+@import 'components/mailing.scss';
+@import 'components/collection.scss';
+@import 'components/cathegories.scss';
+@import 'components/footer.scss';
 
 //ALWAYS END
 

@@ -1,6 +1,8 @@
-document.addEventListener( 'DOMContentLoaded', function( event ) {
+'use strict';
 
-    'use strict';
+document.querySelector( 'html' ).classList.remove( 'no-js');
+
+document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     //*********************************************************//
     //MENU
@@ -52,11 +54,16 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     ( function() {
 
         $( '[ data-tabs-buttons ]' ).each( function() {
-            // const buttonsChildrens = $( this ).children( '[ data-tabs-button ]' );
-            // if ( ! $.grep( buttonsChildrens, function( item ) { return item.hasAttribute( 'active' ) } ).length ) {
-            //     console.log(buttonsChildrens.first());
-            //     buttonsChildrens.first().attr( 'active', '' );
-            // }
+
+            const buttonsChildren = $( this ).children( '[ data-tabs-button ]' );
+            const activeButton = $.grep( buttonsChildren, function( item ) { return item.hasAttribute( 'active' ) } );
+
+            if ( activeButton.length ) {
+                buttonsChildren.first().attr( 'active', '' );
+            }
+
+            $( '[ data-tabs-section="' + $( activeButton[ 0 ] ).attr( 'data-tabs-button' ) + '" ]' ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+
             $( this ).on( 'click', '[ data-tabs-button ]', function() {
 
                 $( this ).attr( 'active', '' ).siblings().removeAttr( 'active' );
@@ -104,12 +111,11 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         } );
 
-
         $( '.header__switch-menu-category' ).on( 'click', '[ data-tabs-button ]', function() {
 
-            const buttonsChildrens = $( '[ data-tabs-section="' + $( this ).attr( 'data-tabs-button' ) + '" ]' ).children( '[ data-tabs-button ]' );
+            const buttonsChildren = $( '[ data-tabs-section="' + $( this ).attr( 'data-tabs-button' ) + '" ]' ).children( '[ data-tabs-button ]' );
 
-            const activeButton = $.grep( buttonsChildrens, function( item ) { return item.hasAttribute( 'active' ) } );
+            const activeButton = $.grep( buttonsChildren, function( item ) { return item.hasAttribute( 'active' ) } );
 
             if ( activeButton.length ) {
 

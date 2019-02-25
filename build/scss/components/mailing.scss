@@ -1,0 +1,77 @@
+.mailing {
+    padding: 9rem 0;
+    color: #fff;
+    background-color: $color-main;
+    background-size: auto;
+    background-repeat: repeat;
+    text-align: center;
+}
+.mailing__form {
+    margin-top: 2rem;
+}
+.mailing__form-checkboxes {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mailing__form-check {
+    margin: 4rem 2rem 0 2rem;
+}
+.mailing__form-footer {
+    max-width: 60rem;
+    margin: 5rem auto 0 auto;
+    display: flex;
+}
+.mailing__form-input {
+    flex: 1 1 auto;
+    // margin-top: 4rem;
+    input {
+        height: 5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+.mailing__form-submit {
+    margin-top: 0;
+    margin-left: 4rem;
+    flex: 0 1 auto;
+}
+@media only screen and (max-width : 1430px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .mailing__form-footer {
+        display: block;
+    }
+    .mailing__form-input {
+        input {
+            text-align: center;
+        }
+    }
+    .mailing__form-submit {
+        margin-top: 4rem;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}
