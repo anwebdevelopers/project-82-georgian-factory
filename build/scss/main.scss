@@ -201,7 +201,89 @@ body {
         }
     }
 }
+.breadcrumbs {
+	margin-top: 3rem;
+	display: flex;
+	align-items: center;
+}
+.breadcrumbs__back {
+	text-decoration: none;
+	color: inherit;
+	flex: 0 0 auto;
+	height: .8rem;
+	width: 3.2rem;
+	margin-top: 1rem;
+	transform-origin: right center;
 
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0 50%;
+	background-size: 100% 2px;
+	background-repeat: no-repeat;
+	transition: .3s;
+
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: rotate( -45deg );
+		width: .8rem;
+		height: .8rem;
+		border-left: 2px solid currentColor;
+		border-top: 2px solid currentColor;
+	}
+	&:active,
+	&:hover {
+		transform: scaleX(1.1);
+	}
+}
+.breadcrumbs__list {
+	padding: 0;
+	list-style: none;
+	margin: 0 0 0 3rem;
+	font-size: 1.4rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	li {
+		margin-top: 1rem;
+		&:not( :last-child ) {
+			margin-right: 1.5rem;
+
+			position: relative;
+			padding-right: 2rem;
+			&:before {
+				content: '';
+				position: absolute;
+				top: .5em;
+				right: 0;
+				width: .8rem;
+				height: .8rem;
+				border-top: 1px solid currentColor;
+				border-right: 1px solid currentColor;
+				transform: rotate(45deg);
+			}
+		}
+		a {
+            text-decoration: none;
+            color: inherit;
+            padding: 0 .2em .1em .2em;
+            margin-left: -.2em;
+            background-image: linear-gradient(#fff, #fff);
+            background-position: 0 0;
+            background-size: 100% 0;
+            background-repeat: no-repeat;
+            transition: .3s;
+            &:active,
+            &:hover,
+            &[ active ] {
+                color: $color-main;
+                background-size: 100% 100%;
+            }
+        }
+	}
+}
 //Custom Styles Here
 @import 'components/form.scss';
 @import 'components/header.scss';

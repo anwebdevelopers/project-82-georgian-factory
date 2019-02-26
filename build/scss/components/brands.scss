@@ -115,7 +115,7 @@
         width: calc( 33.3333% - 2rem );
         &:nth-child(14n-13),
         &:nth-child(14n-4) {
-            width: calc(100% - 2rem);
+            width: calc(66.6666% - 2rem);
         }
     }
 
@@ -125,7 +125,10 @@
     .brands__item {
         width: calc( 50% - 2rem );
         padding: 3rem 4%;
-
+        &:nth-child(14n-13),
+        &:nth-child(14n-4) {
+            width: calc(100% - 2rem);
+        }
     }
 }
 
