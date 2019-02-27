@@ -272,74 +272,95 @@
 	</header>
 
 	<div class="filter">
-		<div class="filter__item">
-			<div class="filter__item-title">Фильтр</div>
-			<div class="filter__item-box">
-				<label class="filter__item-radio radio">
-					<input type="radio" name="filter-radio" checked>
-					<span>Мы рекомендуем</span>
-				</label>
-				<label class="filter__item-radio radio">
-					<input type="radio" name="filter-radio">
-					<span>Новинки</span>
-				</label>
-				<label class="filter__item-radio radio">
-					<input type="radio" name="filter-radio">
-					<span>Цена по убыванию</span>
-				</label>
-				<label class="filter__item-radio radio">
-					<input type="radio" name="filter-radio">
-					<span>Цена по возрастанию</span>
-				</label>
-			</div>
-		</div>
-		<div class="filter__item">
-			<div class="filter__item-title">Цена</div>
-			<div class="filter__item-box">
-				<div class="filter__item-range">
-
+		<div class="container">
+			<div class="filter__box">
+				<div class="filter__item">
+					<div class="filter__item-title">Фильтр</div>
+					<div class="filter__item-box">
+						<label class="filter__item-radio input-radio">
+							<input type="radio" name="filter-radio" checked>
+							<span>Мы рекомендуем</span>
+						</label>
+						<label class="filter__item-radio input-radio">
+							<input type="radio" name="filter-radio">
+							<span>Новинки</span>
+						</label>
+						<label class="filter__item-radio input-radio">
+							<input type="radio" name="filter-radio">
+							<span>Цена по убыванию</span>
+						</label>
+						<label class="filter__item-radio input-radio">
+							<input type="radio" name="filter-radio">
+							<span>Цена по возрастанию</span>
+						</label>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="filter__item">
-			<div class="filter__item-title">Категория</div>
-			<div class="filter__item-box">
-				<label class="filter__item-check check">
-					<input type="checkbox" checked>
-					<span>Мы рекомендуем</span>
-				</label>
-				<label class="filter__item-check check">
-					<input type="checkbox">
-					<span>Новинки</span>
-				</label>
-				<label class="filter__item-check check">
-					<input type="checkbox">
-					<span>Цена по убыванию</span>
-				</label>
-				<label class="filter__item-check check">
-					<input type="checkbox">
-					<span>Цена по возрастанию</span>
-				</label>
-			</div>
-		</div>
-		<div class="filter__item">
-			<div class="filter__item-title">Бренд</div>
-			<div class="filter__item-box">
-			</div>
-		</div>
-		<div class="filter__item">
-			<div class="filter__item-title">Коллекция</div>
-			<div class="filter__item-box">
-			</div>
-		</div>
-		<div class="filter__item">
-			<div class="filter__item-title">Размер</div>
-			<div class="filter__item-box">
-			</div>
-		</div>
-		<div class="filter__item">
-			<div class="filter__item-title">Цвет</div>
-			<div class="filter__item-box">
+				<div class="filter__item" active>
+					<div class="filter__item-title">Цена</div>
+					<div class="filter__item-box">
+						<div class="filter__item-head">
+							<div class="filter__item-head-title">Выберите ценовой диапазон</div>
+							<div class="filter__item-head-button button">
+								<button type="button">Очистить</button>
+							</div>
+						</div>
+						<div class="filter__item-range input-range-multiple">
+							<input id="priceMin" type="range" min="0" max="9999" step="1">
+							<input id="priceMax" type="range" min="0" max="9999" step="1">
+						</div>
+					</div>
+				</div>
+				<div class="filter__item">
+					<div class="filter__item-title">Категория</div>
+					<div class="filter__item-box">
+						<div class="filter__item-head">
+							<div class="filter__item-head-title">2 выбранно</div>
+							<div class="filter__item-head-button button">
+								<button type="button">Очистить</button>
+							</div>
+						</div>
+						<label class="filter__item-check input-check">
+							<input type="checkbox" checked>
+							<span>Коктейльное (23)</span>
+						</label>
+						<label class="filter__item-check input-check">
+							<input type="checkbox">
+							<span>Вечернее (12)</span>
+						</label>
+						<label class="filter__item-check input-check">
+							<input type="checkbox">
+							<span>Летнее (3)</span>
+						</label>
+						<label class="filter__item-check input-check">
+							<input type="checkbox">
+							<span>Офисное (6)</span>
+						</label>
+						<label class="filter__item-check input-check">
+							<input type="checkbox">
+							<span>Свадебное (56)</span>
+						</label>
+					</div>
+				</div>
+				<div class="filter__item">
+					<div class="filter__item-title">Бренд</div>
+					<div class="filter__item-box">
+					</div>
+				</div>
+				<div class="filter__item">
+					<div class="filter__item-title">Коллекция</div>
+					<div class="filter__item-box">
+					</div>
+				</div>
+				<div class="filter__item">
+					<div class="filter__item-title">Размер</div>
+					<div class="filter__item-box">
+					</div>
+				</div>
+				<div class="filter__item">
+					<div class="filter__item-title">Цвет</div>
+					<div class="filter__item-box">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -448,13 +469,13 @@
 				<p>Введите свой адрес электронной почты, если хотите получать информацию обо <br>всех новинках и специальных предложениях</p>
 			</div>
 			<form class="mailing__form">
-				<div class="mailing__form-checkboxes">
-					<label class="mailing__form-check input-check">
-						<input type="radio" name="mailing-check" checked>
+				<div class="mailing__form-switch">
+					<label class="mailing__form-radio input-radio">
+						<input type="radio" name="mailing-radio" checked>
 						<span>Для женщин</span>
 					</label>
-					<label class="mailing__form-check input-check">
-						<input type="radio" name="mailing-check">
+					<label class="mailing__form-radio input-radio">
+						<input type="radio" name="mailing-radio">
 						<span>Для мужчин</span>
 					</label>
 				</div>
@@ -575,11 +596,6 @@
 			</div>
 		</div>
 	</footer>
-
-	<!-- <picture class="header__logo">
-		<source data-lazy-load="img/logo.jpg" srcset="data:image/svg+xml,%3Csvg;xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E" type="image/webp">
-		<img data-lazy-load="img/logo.png" src="data:image/svg+xml,%3Csvg;xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E" alt="">
-	</picture> -->
 
 	<div hidden>
 
