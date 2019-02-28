@@ -136,11 +136,21 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     ( function( $ ) {
 
-        // $( '.filter__item' ).on( 'mouseenter', function() {
-        //     $( this ).attr( 'active', '' );
-        // } ).on( 'mouseleave', function() {
-        //     $( this ).removeAttr( 'active' );
-        // } );
+        $( '.filter__item' ).on( 'mouseenter', function(e) {
+            if ( $( window ).width() > 992 ) {
+                $( this ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+            }
+
+        } ).on( 'mouseleave', function() {
+            $( this ).removeAttr( 'active' );
+        } ).on( 'click', function() {
+
+            if ( $( window ).width() <= 992 && $( this )[0].hasAttribute( 'active' ) ) {
+                $( this ).removeAttr( 'active' );
+            } else {
+                $( this ).attr( 'active', '' );
+            }
+        } );
 
     } ( jQuery ) );
 
@@ -305,25 +315,68 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //*********************************************************//
     //MLTIPLE RANGE SLIDER
     //*********************************************************//
+    ( function() {
+
+        const sliders = document.querySelectorAll( '.input-range-multiple' );
+
+        for ( let i = 0, slider; slider = sliders[ i ]; i++ ) {
+
+            const sliderInput = slider.querySelectorAll( 'input' );
+
+            const sliderElem = document.createElement( 'div' );
+            sliderElem.className = 'noUi';
+
+            slider.appendChild( sliderElem );
+
+            noUiSlider.create( sliderElem, {
+                start: [ sliderInput[ 0 ].value, sliderInput[ 1 ].value ],
+                connect: true,
+                range: {
+                    'min': + sliderInput[ 0 ].getAttribute( 'min' ),
+                    'max': + sliderInput[ 0 ].getAttribute( 'max' )
+                },
+                step:  + sliderInput[ 0 ].getAttribute( 'step' ),
+            } );
+
+            sliderElem.noUiSlider.on( 'update', function ( values, handle ) {
+                sliderInput[ handle ].value = parseInt( values[ handle ] );
+            } );
+
+            for ( let i = 0; i < sliderInput.length ; i++ ) {
+                sliderInput[ i ].addEventListener( 'change', function () {
+                    sliderElem.noUiSlider.set( [ sliderInput[ 0 ].value, sliderInput[ 1 ].value ] );
+                } );
+            }
+        }
+
+    } () );
+
+    //*********************************************************//
+    //MLTIPLE RANGE SLIDER
+    //*********************************************************//
     ( function( $ ) {
 
-        $( '.input-range-multiple input[ type="range" ]' ).on( 'change', function( e ) {
-            console.log(e.target.value);
-        } )
-        // $(document).on( 'click', function( e ) { $( 'input[ type="range" ]' ).val('1000') } )
+        $( '.filter__item' ).each( function() {
+            const $filterItem =  $( this );
+            $filterItem.find( '.filter__item-head-clear-button' ).on( 'click', function( event ) {
+                event.stopPropagation();
 
-        // $( 'input[ type="range" ][ multiple ]' ).nativeMultiple( {
-        //     // stylesheet: 'input-range',
-        //     onCreate: function() {
-        //         console.log(this);
-        //     },
-        //     onChange: function (first_value, second_value ) {
-        //         console.log('onchange', [first_value, second_value]);
-        //     },
-        //     onSlide: function( first_value, second_value ) {
-        //         console.log('onslide', [first_value, second_value]);
-        //     }
-        // } );
+                const $filterInput = $filterItem.find( 'input' );
+
+                if ( $filterInput.attr( 'type' ) === 'checkbox' || $filterInput.attr( 'type' ) === 'radio' ) {
+
+                    $filterInput.attr( 'checked', false );
+                } else {
+
+                    $filterInput.val( '0' );
+
+                    if ( $filterItem.find( '.noUi') ) {
+                        $filterItem.find( '.noUi').get( 0 ).noUiSlider.set( [ 0, 0 ] )
+                    }
+                }
+
+            } );
+        } );
 
     } ( jQuery ) );
 

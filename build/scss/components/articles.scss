@@ -1,5 +1,5 @@
 .articles {
-    margin: 0 -1rem;
+    margin: 0 -1rem 5rem -1rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -46,13 +46,24 @@
         transition: transform 1s ;
     }
 }
+.articles__item-mark {
+    position: absolute;
+    z-index: 0;
+    left: 2rem;
+    top: 2rem;
+    min-width: 6rem;
+    padding: .1rem .8rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+}
 .articles__item-favorites {
     @include btn;
     display: block;
     position: absolute;
     z-index: 1;
-    right: 1rem;
-    bottom: 1rem;
+    right: 2rem;
+    bottom: 2rem;
     width: 4.5rem;
     height: 4.5rem;
     padding: 1.3rem;

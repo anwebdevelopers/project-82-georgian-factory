@@ -277,36 +277,46 @@
 				<div class="filter__item">
 					<div class="filter__item-title">Фильтр</div>
 					<div class="filter__item-box">
-						<label class="filter__item-radio input-radio">
-							<input type="radio" name="filter-radio" checked>
-							<span>Мы рекомендуем</span>
-						</label>
-						<label class="filter__item-radio input-radio">
-							<input type="radio" name="filter-radio">
-							<span>Новинки</span>
-						</label>
-						<label class="filter__item-radio input-radio">
-							<input type="radio" name="filter-radio">
-							<span>Цена по убыванию</span>
-						</label>
-						<label class="filter__item-radio input-radio">
-							<input type="radio" name="filter-radio">
-							<span>Цена по возрастанию</span>
-						</label>
+						<div class="filter__item-body">
+							<label class="filter__item-radio input-radio">
+								<input type="radio" name="filter-radio" checked>
+								<span>Мы рекомендуем</span>
+							</label>
+							<label class="filter__item-radio input-radio">
+								<input type="radio" name="filter-radio">
+								<span>Новинки</span>
+							</label>
+							<label class="filter__item-radio input-radio">
+								<input type="radio" name="filter-radio">
+								<span>Цена по убыванию</span>
+							</label>
+							<label class="filter__item-radio input-radio">
+								<input type="radio" name="filter-radio">
+								<span>Цена по возрастанию</span>
+							</label>
+						</div>
 					</div>
 				</div>
-				<div class="filter__item" active>
+				<div class="filter__item">
 					<div class="filter__item-title">Цена</div>
 					<div class="filter__item-box">
 						<div class="filter__item-head">
-							<div class="filter__item-head-title">Выберите ценовой диапазон</div>
-							<div class="filter__item-head-button button">
+							<div class="filter__item-head-title">Ценовой диапазон</div>
+							<div class="filter__item-head-clear-button button">
 								<button type="button">Очистить</button>
 							</div>
 						</div>
-						<div class="filter__item-range input-range-multiple">
-							<input id="priceMin" type="range" min="0" max="9999" step="1">
-							<input id="priceMax" type="range" min="0" max="9999" step="1">
+						<div class="filter__item-body">
+							<div class="filter__item-range input-range-multiple">
+								<label>
+									<input type="number" min="0" max="9999" step="1" value="2678">
+									<span>руб.</span>
+								</label>
+								<label>
+									<input type="number" min="0" max="9999" step="1" value="7636">
+									<span>руб.</span>
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -315,50 +325,76 @@
 					<div class="filter__item-box">
 						<div class="filter__item-head">
 							<div class="filter__item-head-title">2 выбранно</div>
-							<div class="filter__item-head-button button">
+							<div class="filter__item-head-clear-button button">
 								<button type="button">Очистить</button>
 							</div>
 						</div>
-						<label class="filter__item-check input-check">
-							<input type="checkbox" checked>
-							<span>Коктейльное (23)</span>
-						</label>
-						<label class="filter__item-check input-check">
-							<input type="checkbox">
-							<span>Вечернее (12)</span>
-						</label>
-						<label class="filter__item-check input-check">
-							<input type="checkbox">
-							<span>Летнее (3)</span>
-						</label>
-						<label class="filter__item-check input-check">
-							<input type="checkbox">
-							<span>Офисное (6)</span>
-						</label>
-						<label class="filter__item-check input-check">
-							<input type="checkbox">
-							<span>Свадебное (56)</span>
-						</label>
+						<div class="filter__item-body">
+							<label class="filter__item-check input-check">
+								<input type="checkbox" checked>
+								<span>Коктейльное (23)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Вечернее (12)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Летнее (3)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Офисное (6)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Свадебное (56)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox" checked>
+								<span>Коктейльное (23)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Вечернее (12)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Летнее (3)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Офисное (6)</span>
+							</label>
+							<label class="filter__item-check input-check">
+								<input type="checkbox">
+								<span>Свадебное (56)</span>
+							</label>
+						</div>
 					</div>
 				</div>
 				<div class="filter__item">
 					<div class="filter__item-title">Бренд</div>
 					<div class="filter__item-box">
+						<div class="filter__item-body"></div>
 					</div>
 				</div>
 				<div class="filter__item">
 					<div class="filter__item-title">Коллекция</div>
 					<div class="filter__item-box">
+						<div class="filter__item-body"></div>
 					</div>
 				</div>
 				<div class="filter__item">
 					<div class="filter__item-title">Размер</div>
 					<div class="filter__item-box">
+						<div class="filter__item-body"></div>
 					</div>
 				</div>
 				<div class="filter__item">
 					<div class="filter__item-title">Цвет</div>
 					<div class="filter__item-box">
+						<div class="filter__item-body"></div>
 					</div>
 				</div>
 			</div>
@@ -366,10 +402,63 @@
 	</div>
 
 
-	<section class="novelty section">
+	<section class="section">
 		<div class="container">
-			<h2 class="novelty__title title">Новинки</h2>
-			<div class="novelty__slider articles">
+			<div class="text text_align_center">Найдено 134 моделей</div>
+			<div class="articles">
+				<div class="articles__item">
+					<div class="articles__item-head">
+						<figure class="articles__item-img">
+							<a href="#"><img data-lazy-load="img/img-1.png" src="img/0.svg" alt=""></a>
+						</figure>
+						<mark class="articles__item-mark">New</mark>
+						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
+					</div>
+					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
+					<div class="articles__item-text">Дизайнер</div>
+				</div>
+				<div class="articles__item">
+					<div class="articles__item-head">
+						<figure class="articles__item-img">
+							<a href="#"><img data-lazy-load="img/img-2.png" src="img/0.svg" alt=""></a>
+						</figure>
+						<mark class="articles__item-mark">-20%</mark>
+						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
+					</div>
+					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
+					<div class="articles__item-text">Дизайнер</div>
+				</div>
+				<div class="articles__item">
+					<div class="articles__item-head">
+						<figure class="articles__item-img">
+							<a href="#"><img data-lazy-load="img/img-3.png" src="img/0.svg" alt=""></a>
+						</figure>
+						<mark class="articles__item-mark">Хит</mark>
+						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
+					</div>
+					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
+					<div class="articles__item-text">Дизайнер</div>
+				</div>
+				<div class="articles__item">
+					<div class="articles__item-head">
+						<figure class="articles__item-img">
+							<a href="#"><img data-lazy-load="img/img-4.png" src="img/0.svg" alt=""></a>
+						</figure>
+						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
+					</div>
+					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
+					<div class="articles__item-text">Дизайнер</div>
+				</div>
+				<div class="articles__item">
+					<div class="articles__item-head">
+						<figure class="articles__item-img">
+							<a href="#"><img data-lazy-load="img/img-11.png" src="img/0.svg" alt=""></a>
+						</figure>
+						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
+					</div>
+					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
+					<div class="articles__item-text">Дизайнер</div>
+				</div>
 				<div class="articles__item">
 					<div class="articles__item-head">
 						<figure class="articles__item-img">
@@ -400,64 +489,10 @@
 					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
 					<div class="articles__item-text">Дизайнер</div>
 				</div>
-				<div class="articles__item">
-					<div class="articles__item-head">
-						<figure class="articles__item-img">
-							<a href="#"><img data-lazy-load="img/img-4.png" src="img/0.svg" alt=""></a>
-						</figure>
-						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
-					</div>
-					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
-					<div class="articles__item-text">Дизайнер</div>
-				</div>
-				<div class="articles__item">
-					<div class="articles__item-head">
-						<figure class="articles__item-img">
-							<a href="#"><img data-lazy-load="img/img-11.png" src="img/0.svg" alt=""></a>
-						</figure>
-						<button class="articles__item-favorites"><svg><use href="#icon-favorites"></use></svg></button>
-					</div>
-					<h3 class="articles__item-title"><a href="#">Модель одежды</a></h3>
-					<div class="articles__item-text">Дизайнер</div>
-				</div>
 			</div>
-		</div>
-	</section>
-
-	<section class="section">
-		<div class="container">
-			<h2 class="title">БРЕНДЫ</h2>
-			<div class="brands">
-				<a href="#" class="brands__item">
-					<figure class="brands__item-img">
-						<img data-lazy-load="img/img-big.png" src="img/0.svg" alt="">
-					</figure>
-					<figure class="brands__item-logo">
-						<img data-lazy-load="img/img-logo.png" src="img/0.svg" alt="">
-					</figure>
-					<h3 class="brands__item-title" data-pseudo-text="Подробнее →">Бренд</h3>
-				</a>
-				<a href="#" class="brands__item">
-					<figure class="brands__item-img">
-						<img data-lazy-load="img/img-5.png" src="img/0.svg" alt="">
-					</figure>
-					<figure class="brands__item-logo">
-						<img data-lazy-load="img/img-logo.png" src="img/0.svg" alt="">
-					</figure>
-					<h3 class="brands__item-title" data-pseudo-text="Подробнее →">Бренд</h3>
-				</a>
-				<a href="#" class="brands__item">
-					<figure class="brands__item-img">
-						<img data-lazy-load="img/img-6.png" src="img/0.svg" alt="">
-					</figure>
-					<figure class="brands__item-logo">
-						<img data-lazy-load="img/img-logo.png" src="img/0.svg" alt="">
-					</figure>
-					<h3 class="brands__item-title" data-pseudo-text="Подробнее →">Бренд</h3>
-				</a>
-			</div>
-			<div class="button button_color_dark button_align_center">
-				<a href="#">Все бренды</a>
+			<div class="text text_align_center">Вы просмотрели 8 из 4 665 товаров</div>
+			<div class="button button_align_center button_color_dark">
+				<a href="#">Показать еще</a>
 			</div>
 		</div>
 	</section>

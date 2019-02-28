@@ -36,6 +36,24 @@ body input:required:valid,
 body textarea:required:valid {
 	color: inherit;
 }
+*::-webkit-scrollbar-track {
+	background-color: #66697A;
+	transition: all .5s ease;
+}
+*::-webkit-scrollbar {
+	width: .6rem;
+	height: .6rem;
+	background-color: #66697A;
+	transition: all .5s ease;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: #282A33;
+	transition: all .5s ease;
+}
+body::-webkit-scrollbar {
+	width: 1rem;
+	height: 1rem;
+}
 *,
 *:before,
 *:after{
@@ -200,6 +218,9 @@ body {
 			color: #000;
         }
     }
+	&.text_align_center {
+		text-align: center;
+	}
 }
 .breadcrumbs {
 	margin-top: 3rem;
@@ -301,6 +322,8 @@ body {
 
 //Load Libs
 @import 'app/libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min';
+@import 'app/libs/noUiSlider/nouislider';
+
 //@import 'app/libs/magnific-popup/dist/magnific-popup.css';
 //@import 'build/scss/components/magnific-popup.scss';
 

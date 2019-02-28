@@ -53,7 +53,7 @@
 }
 .input-check {
 
-    input[ type="check" ] {
+    input[ type="checkbox" ] {
         display: none;
         &:checked {
             + span {
@@ -87,138 +87,111 @@
     }
 }
 .input-range-multiple {
-    position: relative;
-    z-index: 0;
-    input[ type="range" ] {
-        &:first-child {
-            position: relative;
-            z-index: 0;
-            &::-webkit-slider-runnable-track {
-                z-index: -1;
-            }
-            &::-moz-range-track {
-                z-index: -1;
-            }
-            &::-ms-track {
-                z-index: -1;
-            }
-            &::-ms-fill-lower {
-                z-index: -1;
-            }
-            &::-ms-fill-upper {
-                z-index: -1;
-            }
-        }
-        &:last-child {
-            position: absolute;
-            left: 0;
-            top: 10px;
-            z-index: -1;
-            &::-webkit-slider-thumb {
-                z-index: 2;
-            }
-            &::-moz-range-thumb {
-                z-index: 2;
-            }
-            &::-ms-thumb {
-                z-index: 2;
-            }
-        }
-        -webkit-appearance: none;
-        margin: 0;
-        width: 100%;
-        background-color: transparent;
-        &:focus {
-            outline: none;
-        }
-        //::-webkit
-        &::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 5px; //for ie pixels
-            cursor: pointer;
-            animate: 0.2s;
-            box-shadow: none;
-            background: #fff;
-            border-radius: 1.3px;
-            border: none;
-        }
-        &::-webkit-slider-thumb {
-            box-shadow: none;
-            border: none;
-            height: 20px; //for ie pixels
-            width: 20px; //for ie pixels
-            border-radius: 50%;
-            background: #3E404D;
-            cursor: pointer;
-            -webkit-appearance: none;
-            margin-top: -8px;
-        }
-        &:focus::-webkit-slider-runnable-track {
-            background: #367ebd;
-        }
-        //::-moz-range
-        &::-moz-range-track {
-            width: 100%;
-            height: 5px; //for ie pixels
-            cursor: pointer;
-            animate: 0.2s;
-            box-shadow: none;
-            background: #fff;
-            border-radius: 1.3px;
-            border: none;
-        }
-        &::-moz-range-thumb {
-            box-shadow: none;
-            border: none;
-            height: 20px; //for ie pixels
-            width: 20px; //for ie pixels
-            border-radius: 50%;
-            background: #3E404D;
-            cursor: pointer;
-        }
 
-
-        //::-ms
-        &::-ms-track {
-            width: 100%;
-            height: 5px; //for ie pixels
-            cursor: pointer;
-            animate: 0.2s;
-            background: transparent;
-            border-color: transparent;
-            border-width: 7.5px 0;
-            color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    label {
+        flex: 0 1 auto;
+        display: flex;
+        max-width: calc(50% - 1rem);
+        &:nth-of-type(1) {
+            margin-right: 2rem;
+            input {
+                &:nth-of-type(1) {
+                    text-align: left;
+                }
+            }
         }
-        &::-ms-fill-lower {
-            background: #fff;
-            border: none;
-            border-radius: 2.6px;
-            box-shadow: none;
+        &:nth-of-type(2) {
+            justify-content: flex-end;
         }
-
-        &::-ms-fill-upper {
-            background: #fff;
-            border: none;
-            border-radius: 2.6px;
-            box-shadow: none;
-        }
-
-        &::-ms-thumb {
-            box-shadow: none;
-            border: none;
-            height: 20px; //for ie pixels
-            width: 20px; //for ie pixels
-            border-radius: 50%;
-            background: #3E404D;
-            cursor: pointer;
-        }
-
-        &:focus::-ms-fill-lower {
-            background: #fff;
-        }
-
-        &:focus::-ms-fill-upper {
-            background: #fff;
+        input {
+            flex: 0 1 auto;
+            width: 5em;
+            &:nth-of-type(1) {
+                margin-right: 0;
+                // text-align: left;
+            }
+            // &:nth-of-type(2) {
+            //     text-align: right;
+            // }
         }
     }
+    input {
+        @include input;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none !important;
+        color: inherit;
+        flex: 0 1 auto;
+        max-width: calc(50% - 1rem);
+        &:nth-of-type(1) {
+            margin-right: 2rem;
+        }
+        &:nth-of-type(2) {
+            text-align: right;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+    }
+    .noUi-horizontal {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        flex: 0 0 auto;
+        width: 100%;
+        height: .6rem;
+        margin-top: 2rem;
+        background-color: #fff;
+        .noUi-handle {
+            outline: none;
+            box-shadow: none;
+            border: none;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            left: -1rem;
+            top: -.8rem;
+            background-color: #3E404D;
+            &:before, &:after {
+                display: none;
+            }
+        }
+    }
+    // .noUi-base {
+    //     flex: 0 0 auto;
+    //     width: 100%;
+    //     margin-top: 2rem;
+    //     height: .5rem;
+    //     background-color: #fff;
+    //     position: relative;
+    // }
+    .noUi-connects {
+        border-radius: 0;
+    }
+    .noUi-connect {
+        // will-change: transform;
+        // position: absolute;
+        // z-index: 1;
+        // top: 0;
+        // left: 0;
+        // height: 100%;
+        // width: 100%;
+        // transform-origin: 0 0;
+        background-color: #3E404D;
+    }
+    // .noUi-connect {
+    //
+    // }
+}
+html:not( [dir='rtl'] ) .input-range-multiple .noUi-horizontal .noUi-handle {
+    right: -1rem;
 }
