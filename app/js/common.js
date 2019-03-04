@@ -134,21 +134,23 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     } ( jQuery ) );
 
+    //*********************************************************//
+    //DROPDOWN
+    //*********************************************************//
     ( function( $ ) {
 
-        $( '.filter__item' ).on( 'mouseenter', function(e) {
+        $( '.dropdown' ).on( 'mouseenter', function(e) {
             if ( $( window ).width() > 992 ) {
-                $( this ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+                $( this ).closest( '.dropdown' ).attr( 'active', '' ).siblings().removeAttr( 'active' );
             }
 
         } ).on( 'mouseleave', function() {
-            $( this ).removeAttr( 'active' );
-        } ).on( 'click', function() {
-
-            if ( $( window ).width() <= 992 && $( this )[0].hasAttribute( 'active' ) ) {
-                $( this ).removeAttr( 'active' );
+            $( this ).closest( '.dropdown' ).removeAttr( 'active' );
+        } ).on( 'click', '.dropdown__title', function() {
+            if ( $( window ).width() <= 992 && $( this ).closest( '.dropdown' )[0].hasAttribute( 'active' ) ) {
+                $( this ).closest( '.dropdown' ).removeAttr( 'active' );
             } else {
-                $( this ).attr( 'active', '' );
+                $( this ).closest( '.dropdown' ).attr( 'active', '' );
             }
         } );
 
@@ -159,56 +161,57 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //SWIPE MOBILE CATEGORIES MENU
     //*********************************************************//
     ( function() {
+        if ( document.querySelector( '.header__nav' ).querySelector( '.header__button-menu-category') ) {
+            const headerNav = document.querySelector( '.header__nav' ),
+                headerButtonMenuCategory = document.querySelector( '.header__button-menu-category' );
 
-        const headerNav = document.querySelector( '.header__nav' ),
-            headerButtonMenuCategory = document.querySelector( '.header__button-menu-category' );
+            let xDown = null;
+            let yDown = null;
 
-        let xDown = null;
-        let yDown = null;
+            function handleTouchStart( event ) {
+                if ( window.innerWidth > 640 ) { return; }
+                xDown = event.touches[ 0 ].clientX;
+                yDown = event.touches[ 0 ].clientY;
+            };
 
-        function handleTouchStart( event ) {
-            if ( window.innerWidth > 640 ) { return; }
-            xDown = event.touches[ 0 ].clientX;
-            yDown = event.touches[ 0 ].clientY;
-        };
-
-        function handleTouchMove( event ) {
-            if ( ! xDown || ! yDown ) {
-                return;
-            }
-
-            const xUp = event.touches[ 0 ].clientX;
-            const yUp = event.touches[ 0 ].clientY;
-
-            const xDiff = xDown - xUp;
-            const yDiff = yDown - yUp;
-
-            if ( Math.abs( xDiff ) + Math.abs( yDiff ) > 30 ) { //to deal with to short swipes
-
-                if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-                    if ( xDiff > 0 ) {/* left swipe */
-                         headerNav.removeAttribute( 'active' );
-                         headerButtonMenuCategory.removeAttribute( 'active' );
-                    } else {/* right swipe */
-                        // alert( 'right!' );
-                         headerNav.setAttribute( 'active', '' );
-                         headerButtonMenuCategory.setAttribute( 'active', '' );
-                    }
-                } else {
-                    if ( yDiff > 0 ) {/* up swipe */
-                        // alert( 'Up!' );
-                    } else { /* down swipe */
-                        // alert( 'Down!' );
-                    }
+            function handleTouchMove( event ) {
+                if ( ! xDown || ! yDown ) {
+                    return;
                 }
-                /* reset values */
-                xDown = null;
-                yDown = null;
-            }
-        };
 
-        headerNav.addEventListener( 'touchstart' , handleTouchStart, false );
-        headerNav.addEventListener( 'touchmove' , handleTouchMove, false );
+                const xUp = event.touches[ 0 ].clientX;
+                const yUp = event.touches[ 0 ].clientY;
+
+                const xDiff = xDown - xUp;
+                const yDiff = yDown - yUp;
+
+                if ( Math.abs( xDiff ) + Math.abs( yDiff ) > 30 ) { //to deal with to short swipes
+
+                    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+                        if ( xDiff > 0 ) {/* left swipe */
+                             headerNav.removeAttribute( 'active' );
+                             headerButtonMenuCategory.removeAttribute( 'active' );
+                        } else {/* right swipe */
+                            // alert( 'right!' );
+                             headerNav.setAttribute( 'active', '' );
+                             headerButtonMenuCategory.setAttribute( 'active', '' );
+                        }
+                    } else {
+                        if ( yDiff > 0 ) {/* up swipe */
+                            // alert( 'Up!' );
+                        } else { /* down swipe */
+                            // alert( 'Down!' );
+                        }
+                    }
+                    /* reset values */
+                    xDown = null;
+                    yDown = null;
+                }
+            };
+
+            headerNav.addEventListener( 'touchstart' , handleTouchStart, false );
+            headerNav.addEventListener( 'touchmove' , handleTouchMove, false );
+        }
 
     } () );
 
@@ -216,21 +219,22 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //CLICK MOBILE CATEGORIES MENU
     //*********************************************************//
     ( function( $ ) {
+        if ( document.querySelector( '.header__button-menu-category') ) {
+             document.querySelector( '.header__button-menu-category' ).addEventListener( 'click', function( event ) {
 
-         document.querySelector( '.header__button-menu-category' ).addEventListener( 'click', function( event ) {
+                 const headerNav = document.querySelector( '.header__nav' );
 
-             const headerNav = document.querySelector( '.header__nav' );
+                 if (  event.target.hasAttribute( 'active' ) ) {
 
-             if (  event.target.hasAttribute( 'active' ) ) {
+                     event.target.removeAttribute( 'active' );
+                     headerNav.removeAttribute( 'active' );
+                 } else {
 
-                 event.target.removeAttribute( 'active' );
-                 headerNav.removeAttribute( 'active' );
-             } else {
-
-                 event.target.setAttribute( 'active', '' );
-                 headerNav.setAttribute( 'active', '' );
-             }
-         } );
+                     event.target.setAttribute( 'active', '' );
+                     headerNav.setAttribute( 'active', '' );
+                 }
+             } );
+         }
 
     } ( jQuery ) );
 
@@ -277,6 +281,9 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     } ( jQuery ) );
 
+    //*********************************************************//
+    //NOVELTY SLIDER
+    //*********************************************************//
     ( function( $ ) {
         $( '.novelty__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
@@ -308,6 +315,32 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                 $( '.novelty__title' ).wrap('<div class="novelty__head"></div>');
                 $('.novelty__head').append( '<div class="novelty__dots"></div><div class="novelty__nav"></div>' );
             },
+        } );
+
+    } ( jQuery ) );
+
+    //*********************************************************//
+    //PRODUCT SLIDER
+    //*********************************************************//
+    ( function( $ ) {
+
+        $( '.product__picture' ).wrapInner( '<div class="product__slider"></div>' ).find( '.product__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            items: 1,
+            nav: true,
+            navText: '',
+            autoplayTimeout: 10000,
+            autoplay: true,
+            smartSpeed: 1000,
+            dotsContainer: '.product__thumbs',
+            onInitialize: function( event ) {
+                $( event.target ).after('<div class="product__thumbs"></div>');
+            },
+            onInitialized: function( event ) {
+                $( event.target ).find( '.owl-item:not(.cloned) .product__img img' ).each( function() {
+                    $( this ).closest( '.product__slider' ).next( '.product__thumbs' ).find( '.owl-dot' ).eq( $( this ).index( '.owl-item:not( .cloned ) .product__img img' )).html( '<img src="' + $( this ).attr( 'src' ) + '">' );
+                });
+            }
         } );
 
     } ( jQuery ) );
@@ -352,7 +385,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     } () );
 
     //*********************************************************//
-    //MLTIPLE RANGE SLIDER
+    //FILTER ITEM CLEAR
     //*********************************************************//
     ( function( $ ) {
 
@@ -371,7 +404,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                     $filterInput.val( '0' );
 
                     if ( $filterItem.find( '.noUi') ) {
-                        $filterItem.find( '.noUi').get( 0 ).noUiSlider.set( [ 0, 0 ] )
+                        $filterItem.find( '.noUi').get( 0 ).noUiSlider.set( [ 0, 0 ] );
                     }
                 }
 

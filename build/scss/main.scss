@@ -170,15 +170,16 @@ body {
 	a:not( [ class ] ) {
 		text-decoration: none;
 		padding: 0 .3rem 0 .3rem;
-		color: $color-main;
-		background-image: linear-gradient($color-main, $color-main);
+		color: inherit;
+		background-image: linear-gradient(currentColor, currentColor);
 		background-position: 0 100%;
-		background-size: 100% .05em;
+		background-size: 100% 1px;
 		background-repeat: no-repeat;
 		transition: .3s;
 		&:active,
 		&:hover {
 			color: #fff;
+			background-image: linear-gradient($color-main, $color-main);
 			background-size: 100% 100%;
 		}
 	}
@@ -317,6 +318,7 @@ body {
 @import 'components/footer.scss';
 
 @import 'components/filter.scss';
+@import 'components/product.scss';
 
 //ALWAYS END
 
