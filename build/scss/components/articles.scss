@@ -1,5 +1,5 @@
 .articles {
-    margin: 0 -1rem 5rem -1rem;
+    margin: 0 -1rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -57,7 +57,7 @@
     color: #fff;
     background-color: #000;
 }
-.articles__item-favorites {
+.articles__item-button {
     @include btn;
     display: block;
     position: absolute;

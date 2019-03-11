@@ -243,41 +243,43 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //*********************************************************//
     ( function( $ ) {
 
-        $( '.header__text' ).wrapInner( '<div class="header__slider"></div>' ).find( '.header__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
-            loop: true,
-            items: 1,
-            nav: true,
-            navText: '',
-            autoplayTimeout: 10000,
-            autoplay: true,
-            smartSpeed: 1000,
-            // autoHeight: true,
-            navContainer: '.header__slider-nav',
-            dotsContainer: '.header__slider-dots',
-            onInitialize: function( event ) {
-                $( event.target ).find( '.header__text-item' ).each( function() {
-                    $( this ).attr( 'data-item-counter', $( this ).index() )
-                } );
+        if ( $( '.header__text-item' ).length > 1 ) {
+            $( '.header__text' ).wrapInner( '<div class="header__slider"></div>' ).find( '.header__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
+                loop: true,
+                items: 1,
+                nav: true,
+                navText: '',
+                autoplayTimeout: 10000,
+                autoplay: true,
+                smartSpeed: 1000,
+                // autoHeight: true,
+                navContainer: '.header__slider-nav',
+                dotsContainer: '.header__slider-dots',
+                onInitialize: function( event ) {
+                    $( event.target ).find( '.header__text-item' ).each( function() {
+                        $( this ).attr( 'data-item-counter', $( this ).index() )
+                    } );
 
-                $( '.header__background' ).attr( 'active', '' );
+                    $( '.header__background' ).attr( 'active', '' );
 
-                $( '.header__bottom' ).append( '<div class="header__slider-nav"></div><div class="header__slider-dots"></div>' );
-            },
-            onInitialized: function( event ) {
-                const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
+                    $( '.header__bottom' ).append( '<div class="header__slider-nav"></div><div class="header__slider-dots"></div>' );
+                },
+                onInitialized: function( event ) {
+                    const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
 
-                $( '.header__bottom' ).append( '<div class="header__slider-counter"><div class="header__slider-counter-current">' + ( itemIndex + 1 ) + '</div><div class="header__slider-counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
+                    $( '.header__bottom' ).append( '<div class="header__slider-counter"><div class="header__slider-counter-current">' + ( itemIndex + 1 ) + '</div><div class="header__slider-counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
 
-                $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
-            },
-            onTranslate: function( event ) {
-                const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
+                    $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+                },
+                onTranslate: function( event ) {
+                    const itemIndex = + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' );
 
-                $( '.header__slider-counter' ).find( '.header__slider-counter-current' ).text( itemIndex + 1 );
+                    $( '.header__slider-counter' ).find( '.header__slider-counter-current' ).text( itemIndex + 1 );
 
-                $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
-            }
-        } );
+                    $( '.header__background' ).find( '.header__background-item' ).eq( itemIndex ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+                }
+            } );
+        }
 
     } ( jQuery ) );
 

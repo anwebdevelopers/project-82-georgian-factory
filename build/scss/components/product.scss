@@ -1,9 +1,6 @@
+
 .product {
-    padding-bottom: 5rem;
-    border-bottom: 1px solid rgba(0,0,0,.2);
-}
-.product__box {
-    margin-top: 4rem;
+    margin-top: 5rem;
 
     display: flex;
 }
@@ -11,8 +8,61 @@
     flex: 0 0 auto;
     width: 47.5%;
 }
-.product__slider {
+.product__slider.owl-carousel {
+    .owl-nav {
+        position: absolute;
+        right: 3rem;
+        bottom: 3rem;
+        padding: 2rem 2.5rem;
+        border-radius: 4.5rem;
+        background-color: rgba(255,255,255, .7);
 
+        display: flex;
+        .owl-prev,
+        .owl-next {
+            @include btn;
+            display: block;
+            flex: 0 0 auto;
+            height: .8rem;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position: 0 50%;
+            background-size: 100% 2px;
+            background-repeat: no-repeat;
+            transition: .3s;
+
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: .8rem;
+                height: .8rem;
+                border-left: 2px solid currentColor;
+                border-top: 2px solid currentColor;
+            }
+            &:active,
+            &:hover {
+                transform: scaleX(1.1);
+            }
+        }
+        .owl-prev {
+            width: 1.6rem;
+            margin-right: 1.5rem;
+            transform-origin: right center;
+            &:before {
+                left: 0;
+                transform: rotate( -45deg );
+            }
+        }
+        .owl-next {
+            width: 3.2rem;
+            transform-origin: left center;
+            &:before {
+                right: 0;
+                transform: rotate( 135deg );
+            }
+        }
+    }
 }
 .product__thumbs {
     display: flex;
@@ -106,6 +156,7 @@
 }
 .product__settings-item {
     flex: 1 0 auto;
+    margin-right: 4rem;
 
     transition: .3s;
 
@@ -116,8 +167,8 @@
     position: relative;
 
     &[ active ] {
-        color: #fff;
-        background-color: $color-flter-bg;
+        // color: #fff;
+        // background-color: $color-flter-bg;
         .product__settings-item-title {
             &:after {
                 top: .2em;
@@ -144,11 +195,15 @@
             transform: translate(0, 100%);
         }
     }
+    &:not( :last-child ) {
+
+    }
 }
 .product__settings-item-title {
     position: relative;
     // padding-right: 3rem;
-    padding: 3rem 1rem;
+    padding: 1rem 0;
+
     &:after {
         content: '';
         display: inline-block;
@@ -181,6 +236,31 @@
 .product__settings-item-body {
     max-height: 27rem;
     overflow-y: auto;
+}
+.product__settings-item-radio {
+    display: block;
+    padding: 1rem 2rem;
+    transition: .3s;
+    // &:first-of-type {
+    //     margin-top: 1rem;
+    // }
+    // &:last-of-type {
+    //     margin-bottom: 1rem;
+    // }
+    &:hover,
+    &:active {
+        background-color: $color-flter-hover;
+    }
+    span {
+        &:before {
+            left: auto;
+            right: 0;
+        }
+        padding-left: 0;
+        padding-right: 2.5rem;
+        display: block;
+        white-space: nowrap;
+    }
 }
 .product__sizes-button {
     flex: 0 1 auto;
@@ -322,10 +402,35 @@
     .product__price-cost {
         font-size: 3.5rem;
     }
+    .product__brand {
+        margin-top: 4rem;
+    }
+    .product__buttons {
+        margin-top: 2rem;
+    }
+    .product___button-basket {
+        margin: 3rem 3rem 0 0;
+    }
+    .product__button-favorites {
+        margin-top: 3rem;
+    }
+    .product__link {
+        margin-top: 5rem;
+    }
 }
 
 @media only screen and (max-width : 768px) {
-
+    .product {
+        display: block;
+    }
+    .product__picture {
+        width: auto;
+    }
+    .product__data {
+        width: auto;
+        margin-left: 0;
+        margin-top: 6rem;
+    }
 }
 
 @media only screen and (max-width : 640px) {
@@ -337,5 +442,7 @@
 }
 
 @media only screen and (max-width : 360px) {
-
+    .product__price-cost {
+        font-size: 3rem;
+    }
 }

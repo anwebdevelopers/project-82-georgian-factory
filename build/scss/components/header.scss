@@ -27,6 +27,18 @@
             }
         }
     }
+    &.header_mod_page-brand {
+        .header__nav {
+            border: none;
+            background: none;
+            &:before {
+                display: none;
+            }
+        }
+        .header__main {
+            border: none;
+        }
+    }
 }
 .header__background {
     position: absolute;
@@ -51,7 +63,7 @@
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0,0,0,.4);
     }
 }
 .header__background-item {
@@ -72,7 +84,6 @@
 }
 
 .header__box {
-
     display: flex;
     position: relative;
 }
@@ -981,7 +992,7 @@
         margin: 1rem 4rem 1rem 0;
     }
     .header__lang {
-        margin: 1rem 3rem 1rem 0;
+        margin: 1rem 2.5rem 1rem 0;
     }
     .header__buttons {
         button, a {
@@ -992,6 +1003,9 @@
     }
     .header__main {
         padding: 0 0 8rem 6%;
+    }
+    .header.header_mod_page .header__main {
+        padding: 0 0 2rem 6%;
     }
     .header__category-item {
         flex-wrap: wrap;
