@@ -156,6 +156,23 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     } ( jQuery ) );
 
+    /*******************************************************/
+    //QUANTITY CHANGE
+    /*******************************************************/
+
+    $( '.input-quantity' ).each( function() {
+        $( this ).find( 'button' ).on( 'click', function() {
+            const $input = $( this ).siblings( 'input' );
+            const value = + $input.val();
+
+            if ( $( this ).index() === 0 && value > 0 ) {
+                $input.val( value - 1 ).attr( 'value', value - 1 );
+            } else if ( $( this ).index() === 2 ) {
+                $input.val( value + 1 ).attr( 'value', value + 1 );
+            }
+        } );
+    } );
+
 
     //*********************************************************//
     //SWIPE MOBILE CATEGORIES MENU

@@ -127,7 +127,7 @@
 		</div>
 	</header>
 
-	<section class="section">
+	<section class="section basket">
 		<div class="container">
 			<div class="breadcrumbs">
 				<a href="#" class="breadcrumbs__back"></a>
@@ -137,19 +137,141 @@
 				</ul>
 			</div>
 			<h1 class="title">Моя корзина</h1>
-			<div class="basket">
-				<div class="basket__list">
-					<div class="basket__item">
-						<figure class="basket__item-img">
-							<img data-lazy-load="img/img-4.png" src="img/0.svg" alt="">
-						</figure>
-						<div class="basket__item-content">
-
+			<div class="basket__box">
+				<div class="basket__main">
+					<div class="basket__list">
+						<div class="basket__item">
+							<figure class="basket__item-img">
+								<img data-lazy-load="img/img-4.png" src="img/0.svg" alt="">
+							</figure>
+							<div class="basket__item-box">
+								<button class="basket__item-remove"></button>
+								<div class="basket__item-price">
+									<div class="basket__item-price-actual">12 890,00 руб.</div>
+									<div class="basket__item-price-old">1 890,00 руб.</div>
+								</div>
+								<div class="basket__item-title">Converse Chuck Taylor All Star leather studded hi trainers in black</div>
+								<div class="basket__item-settings">
+									<div class="basket__item-settings-elem">
+										<div class="basket__item-settings-elem-title">Цвет</div>
+										<label class="basket__item-settings-elem-select input-select">
+											<select>
+												<option>Черный</option>
+												<option>Белый</option>
+											</select>
+										</label>
+									</div>
+									<div class="basket__item-settings-elem">
+										<div class="basket__item-settings-elem-title">Размер</div>
+										<label class="basket__item-settings-elem-select input-select">
+											<select>
+												<option>XS</option>
+												<option>L</option>
+												<option>XL</option>
+											</select>
+										</label>
+									</div>
+									<div class="basket__item-settings-elem">
+										<div class="basket__item-settings-elem-title">Количество</div>
+										<div class="basket__item-settings-elem-quantity input-quantity">
+											<button type="button"></button>
+											<input type="text" value="1">
+											<button type="button"></button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="basket__item-button-favorites">
+									<div class="basket__item-button-favorites-icon">
+										<svg><use href="#icon-favorites-filled"></use></svg>
+									</div>
+									<div class="basket__item-button-favorites-text">В избранное</div>
+								</button>
+							</div>
+						</div>
+						<div class="basket__item">
+							<figure class="basket__item-img">
+								<img data-lazy-load="img/img-2.png" src="img/0.svg" alt="">
+							</figure>
+							<div class="basket__item-box">
+								<button class="basket__item-remove"></button>
+								<div class="basket__item-price">
+									<div class="basket__item-price-actual">12 890,00 руб.</div>
+									<div class="basket__item-price-old">1 890,00 руб.</div>
+								</div>
+								<div class="basket__item-title">Converse Chuck Taylor All Star leather studded hi trainers in black</div>
+								<div class="basket__item-settings">
+									<div class="basket__item-settings-elem">
+										<div class="basket__item-settings-elem-title">Цвет</div>
+										<label class="basket__item-settings-elem-select input-select">
+											<select>
+												<option>Черный</option>
+												<option>Белый</option>
+											</select>
+										</label>
+									</div>
+									<div class="basket__item-settings-elem">
+										<div class="basket__item-settings-elem-title">Размер</div>
+										<label class="basket__item-settings-elem-select input-select">
+											<select>
+												<option>XS</option>
+												<option>L</option>
+												<option>XL</option>
+											</select>
+										</label>
+									</div>
+									<div class="basket__item-settings-elem">
+										<div class="basket__item-settings-elem-title">Количество</div>
+										<div class="basket__item-settings-elem-quantity input-quantity">
+											<button type="button"></button>
+											<input type="text" value="1">
+											<button type="button"></button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="basket__item-button-favorites">
+									<div class="basket__item-button-favorites-icon">
+										<svg><use href="#icon-favorites-filled"></use></svg>
+									</div>
+									<div class="basket__item-button-favorites-text">В избранное</div>
+								</button>
+							</div>
 						</div>
 					</div>
+					<div class="basket__sum">
+						<div class="basket__sum-title">Всего:</div>
+						<div class="basket__sum-result">12 890,00 руб.</div>
+					</div>
 				</div>
-				<div class="basket__sum">
-
+				<div class="basket__aside">
+					<div class="basket__head">ИТОГО</div>
+					<div class="basket__total">
+						<div class="basket__total-title">Всего:</div>
+						<div class="basket__total-result">12 890,00 руб.</div>
+					</div>
+					<div class="basket__delivery">
+						<div class="basket__delivery-title">Доставка</div>
+						<label class="basket__delivery-select input-select">
+							<option>Экспресс доставка</option>
+							<option>Доставка почтой</option>
+						</label>
+					</div>
+					<div class="basket__button-pay button button_color_dark">
+						<button>Оплатить</button>
+					</div>
+					<div class="basket__payments">
+						<div class="basket__payments-title">Мы принимаем</div>
+						<div class="basket__payments-box">
+							<figure class="basket__payments-item">
+								<img data-lazy-load="img/img-payment-1.svg" src="img/0.svg" alt="">
+							</figure>
+							<figure class="basket__payments-item">
+								<img data-lazy-load="img/img-payment-2.svg" src="img/0.svg" alt="">
+							</figure>
+							<figure class="basket__payments-item">
+								<img data-lazy-load="img/img-payment-3.svg" src="img/0.svg" alt="">
+							</figure>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
