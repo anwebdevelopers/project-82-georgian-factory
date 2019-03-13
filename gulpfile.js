@@ -121,7 +121,7 @@ gulp.task( 'scripts', () => {
         'app/libs/jquery-3.3.1/jquery-3.3.1.min.js',
         'app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
         'app/libs/noUiSlider/nouislider.min.js',
-        // 'app/libs/tippyjs/index.js',
+        'app/libs/tippyjs/index.js',
         // 'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
     ] )
     .pipe( concat( 'scripts.js' ) )
