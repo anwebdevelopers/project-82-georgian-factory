@@ -4,6 +4,17 @@ $color-flter-head-bg: #3E404D;
 .filter {
     // padding: 2rem 0;
     background-color: #F5F5F6;
+    &.filter_content_center {
+        .filter__box {
+            justify-content: center;
+        }
+        .filter__item {
+            flex: 0 0 auto;
+        }
+        .filter__item-title {
+            padding: 3rem 3rem;
+        }
+    }
 }
 .filter__box {
     display: flex;
@@ -265,6 +276,9 @@ $color-flter-head-bg: #3E404D;
     .filter__item-title {
         padding: 1em 4.4%;
 
+    }
+    .filter.filter_content_center .filter__item-title {
+        padding: 1em 4.4%;
     }
     .filter__item-box {
         display: flex;

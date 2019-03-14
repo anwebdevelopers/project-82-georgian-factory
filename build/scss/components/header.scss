@@ -453,15 +453,13 @@
 }
 
 .header__menu-category-item {
-    display: none;
+    // display: none;
     direction: ltr;
     font-size: 1.4rem;
     + .header__menu-category-item {
         margin-top: 4rem;
     }
-    &[ active ] {
-        display: flex;
-    }
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     button {
@@ -486,9 +484,9 @@
         }
     }
 }
-.no-js .header__menu-category-item {
-    display: flex;
-}
+// .no-js .header__menu-category-item {
+//     display: flex;
+// }
 .header__main {
     flex: 0 0 auto;
     width: calc(100% - 15rem);

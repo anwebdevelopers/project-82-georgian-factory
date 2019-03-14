@@ -1,0 +1,191 @@
+.sizes {
+    margin-top: 5rem;
+}
+.filter {
+    + .sizes {
+        margin-top: 0;
+    }
+}
+.sizes__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sizes__switch {
+
+    flex: 0 0 auto;
+    margin-right: 4rem;
+    display: flex;
+
+    button {
+        @include btn;
+        // padding: .8rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.4rem;
+        line-height: 3rem;
+        font-weight: 700;
+        text-align: center;
+        color: inherit;
+        border: 1px solid $color-main;
+        background-image: linear-gradient(#fff, #fff);
+        background-position: 0 0;
+        background-size: 100% 0;
+        background-repeat: no-repeat;
+        transition: .3s;
+        &:active,
+        &:hover {
+            color: $color-main;
+            background-size: 100% 100%;
+        }
+        &[ active ] {
+            background-image: none;
+            color: #fff;
+            background-color: $color-main;
+            cursor: default;
+        }
+    }
+}
+
+.sizes__info {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sizes__info-title {
+    flex: 0 1 auto;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.sizes__info-icon {
+    flex: 0 0 auto;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    color: #fff;
+    background-color: $color-main;
+    text-align: center;
+}
+.sizes__table {
+    &:not( :first-child ) {
+        margin-top: 5rem;
+    }
+    overflow-x: auto;
+    // &.sizes__table_width_auto {
+    //     table {
+    //         width: auto;
+    //         margin: 0 auto;
+    //     }
+    // }
+    table {
+        // display: none;
+        // &[ active ] {
+        //     display: table;
+        // }
+        table-layout: fixed;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border-color: transparent;
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.6rem;
+        line-height: 1.1;
+        text-align: center;
+        thead {
+            tr {
+                background-color: $color-main;
+                color: #fff;
+                // position: relative;
+                // &:before, &:after {
+                //     content: '';
+                //     position: absolute;
+                //     z-index: 1;
+                //     top: 0;
+                //     bottom: 0;
+                //     width: 100vw;
+                //     background-color: $color-main;
+                // }
+                // &:before {
+                //     left: 0;
+                //     transform: translateX(-100%);
+                // }
+                // &:after {
+                //     right: 0;
+                //     transform: translateX(100%);
+                // }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child( odd ) {
+                    background-color: #F5F5F6;
+                }
+            }
+        }
+        thead,
+        tbody {
+            tr {
+                th,
+                td {
+                    font-weight: 500;
+                    padding: 3rem 1rem;
+                }
+            }
+        }
+    }
+}
+
+.sizes__title {
+    margin-top: 4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+@media only screen and (max-width : 1430px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .sizes__table {
+        table {
+            font-size: 1.4rem;
+            thead,
+            tbody {
+                tr {
+                    th,
+                    td {
+                        padding: 2rem .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 360px) {
+    .sizes__table {
+        table {
+            font-size: 1.2rem;
+        }
+    }
+}

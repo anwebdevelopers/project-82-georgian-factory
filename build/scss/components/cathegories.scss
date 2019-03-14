@@ -48,15 +48,15 @@
 .cathegories__box {
 
 }
-.cathegories__section {
-    display: none;
-    &[ active ] {
-        display: flex;
-    }
-}
-.no-js .cathegories__section {
-    display: flex;
-}
+// .cathegories__section {
+//     display: none;
+//     &[ active ] {
+//         display: flex;
+//     }
+// }
+// .no-js .cathegories__section {
+//     display: flex;
+// }
 
 @media only screen and (max-width : 1430px) {
 

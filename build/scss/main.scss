@@ -81,7 +81,13 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	overflow-x: hidden;
+	&:not( .no-js ) {
+		[ data-tabs-section ]:not( [ active ] ) {
+			display: none;
+		}
+	}
 }
+
 .container {
 	max-width: calc( 1280px + 8% );
 	padding: 0 4%;
@@ -156,10 +162,22 @@ body {
 	letter-spacing: 0.03em;
 	font-family: 'Bebas Neue';
 	text-align: center;
+
+	+ * {
+		margin-top: 5rem;
+	}
+}
+.subtitle {
+	margin-top: 3rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #a0a3bb;
+	text-align: center;
 }
 .text {
 	&:not( :first-child ) {
-		margin-top: 5rem;
+		margin-top: 4rem;
 	}
 	* {
 		max-width: 100% !important;
@@ -343,6 +361,9 @@ body {
 @import 'components/filter.scss';
 @import 'components/product.scss';
 @import 'components/basket.scss';
+@import 'components/sizes.scss';
+@import 'components/popup.scss';
+
 
 //ALWAYS END
 
