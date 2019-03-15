@@ -105,17 +105,11 @@
                 //     position: absolute;
                 //     z-index: 1;
                 //     top: 0;
+                //     left: 50%;
                 //     bottom: 0;
+                //     transform: translateX(-50%);
                 //     width: 100vw;
                 //     background-color: $color-main;
-                // }
-                // &:before {
-                //     left: 0;
-                //     transform: translateX(-100%);
-                // }
-                // &:after {
-                //     right: 0;
-                //     transform: translateX(100%);
                 // }
             }
         }

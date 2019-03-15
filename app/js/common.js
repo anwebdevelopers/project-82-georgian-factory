@@ -119,7 +119,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             if ( $( window ).width() <= 992 && $( this ).closest( '.dropdown' )[0].hasAttribute( 'active' ) ) {
                 $( this ).closest( '.dropdown' ).removeAttr( 'active' );
             } else {
-                $( this ).closest( '.dropdown' ).attr( 'active', '' ).siblings().removeAttr( 'active' );;
+                $( this ).closest( '.dropdown' ).attr( 'active', '' ).siblings().removeAttr( 'active' );
             }
         } );
 
