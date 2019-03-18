@@ -1,0 +1,14 @@
+.content {
+    padding-top: 1px;
+    line-height: 1.8;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX( -50% );
+        width: 100vw;
+        border-bottom: 1px solid  rgba(84, 86, 101, 0.2);
+    }
+}

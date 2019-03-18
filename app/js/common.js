@@ -125,6 +125,22 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     } ( jQuery ) );
 
+
+    //*********************************************************//
+    //ACCORDION
+    //*********************************************************//
+    ( function( $ ) {
+
+        $( '.accordion' ).on( 'click', '.accordion__title', function() {
+            if ( $( this ).closest( '.accordion' )[0].hasAttribute( 'active' ) ) {
+                $( this ).closest( '.accordion' ).removeAttr( 'active' );
+            } else {
+                $( this ).closest( '.accordion' ).attr( 'active', '' ).siblings().removeAttr( 'active' );
+            }
+        } );
+
+    } ( jQuery ) );
+
     /*******************************************************/
     //QUANTITY CHANGE
     /*******************************************************/

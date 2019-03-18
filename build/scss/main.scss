@@ -63,6 +63,11 @@ body::-webkit-scrollbar {
 html {
 	height: 100%;
 	font-size: 10px;
+	&:not( .no-js ) {
+		[ data-tabs-section ]:not( [ active ] ) {
+			display: none;
+		}
+	}
 }
 body {
 	position: relative;
@@ -81,11 +86,6 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	overflow-x: hidden;
-	&:not( .no-js ) {
-		[ data-tabs-section ]:not( [ active ] ) {
-			display: none;
-		}
-	}
 }
 
 .container {
@@ -176,34 +176,41 @@ body {
 	text-align: center;
 }
 .text {
-	&:not( :first-child ) {
-		margin-top: 4rem;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
 	}
-	* {
-		max-width: 100% !important;
+	&:not( :first-child ) {
+		margin-top: 6rem;
+	}
+	*:not( .align-wide ) {
+		max-width: 100%;
 	}
 	h1,h2,h3,h4,h5,h6 {
 		font-weight: 700;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		// color: #3436c0;
 	}
-	p,ul,ol,img {
-		margin-top: 3rem;
-		margin-bottom: 3rem;
+	h1,h2,h3,h4,h5,h6,p,ul,ol,img, blockquote {
+		&:not( [ class*="align-" ] ) {
+			margin-top: 5rem;
+		}
+		margin-bottom: 5rem;
 	}
 	ul,ol {
 		li {
-			margin: 1.5rem 0 0 0;
+			margin: 2rem 0 0 0;
 		}
 	}
 	ul {
 		padding: 0;
 	    list-style: none;
 	    li {
-	        padding: 0 0 0 4rem;
-	        background-image: linear-gradient($color-main, $color-main);
-	        background-position: 0 1.4rem;
-	        background-size: 2.5rem 2px;
+	        padding: 0 0 0 2rem;
+	        background-image: radial-gradient($color-main, $color-main);
+	        background-position: 0 .8em;
+	        background-size: 4px 4px;
 	        background-repeat: no-repeat;
 	    }
 	}
@@ -211,7 +218,7 @@ body {
 		text-decoration: none;
 		padding: 0 .3rem 0 .3rem;
 		color: inherit;
-		background-image: linear-gradient(currentColor, currentColor);
+		background-image: linear-gradient($color-main, $color-main);
 		background-position: 0 100%;
 		background-size: 100% 1px;
 		background-repeat: no-repeat;
@@ -219,7 +226,6 @@ body {
 		&:active,
 		&:hover {
 			color: #fff;
-			background-image: linear-gradient($color-main, $color-main);
 			background-size: 100% 100%;
 		}
 	}
@@ -235,7 +241,42 @@ body {
 	}
 	*.align-right {
 		float: right;
-		margin-right: 5rem;
+		margin-left: 5rem;
+	}
+	*.align-wide {
+		position: relative;
+		left: 50%;
+		transform: translate(-50%);
+		width: 100vw;
+		+ *:not( [ class ] ) {
+			margin-top: 0;
+		}
+	}
+	blockquote {
+		// max-width: 112% !important;
+		// width: 112%;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 4rem 4%;
+		border: .5rem solid currentColor;
+		font-style: italic;
+
+		position: relative;
+		&:before {
+			content: '';
+			// position: absolute;
+			// left: 4rem;
+			// top: 4rem;
+			display: inline-block;
+			vertical-align: bottom;
+			width: 3.8rem;
+			height: 3.8rem;
+			margin-right: 2rem;
+			margin-bottom: .5rem;
+			background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 38 37' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.351563 19V37H15.3516V17.6H9.55156L14.5516 -9.53674e-06H7.95156L0.351563 19ZM22.7516 19V37H37.5516V17.6H31.9516L36.7516 -9.53674e-06H30.3516L22.7516 19Z' fill='%23545665'/%3E%3C/svg%3E%0A");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
 	}
 	table {
         border-collapse: separate;
@@ -347,6 +388,9 @@ body {
         }
 	}
 }
+.accordion__title {
+	cursor: pointer;
+}
 //Custom Styles Here
 @import 'components/form.scss';
 @import 'components/header.scss';
@@ -365,6 +409,7 @@ body {
 @import 'components/popup.scss';
 @import 'components/faq.scss';
 @import 'components/search.scss';
+@import 'components/content.scss';
 
 
 //ALWAYS END
