@@ -1934,10 +1934,6 @@ html:not([dir='rtl']) .input-range-multiple .noUi-horizontal .noUi-handle {
 	align-items: flex-start;
 }
 
-.header__menu-category-item + .header__menu-category-item {
-	margin-top: 4rem;
-}
-
 .header__menu-category-item button {
 	display: inline-block;
 	vertical-align: top;
@@ -2039,6 +2035,10 @@ html:not(.no-js) .header__category-item[data-tabs-section]:not([active]) {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+}
+
+html.no-js .header__category-item + .header__menu-category-item {
+	margin-top: 4rem;
 }
 
 .header__category-type,
@@ -4523,7 +4523,7 @@ html:not(.no-js) .header__category-item[data-tabs-section]:not([active]) {
 }
 
 .product__img {
-	margin: 0;
+	margin: 0 1px;
 }
 
 .product__img img {
