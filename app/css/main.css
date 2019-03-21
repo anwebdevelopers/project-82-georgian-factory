@@ -1948,7 +1948,7 @@ html:not([dir='rtl']) .input-range-multiple .noUi-horizontal .noUi-handle {
 	display: block;
 	color: inherit;
 	padding: 0 .2em .1em .2em;
-	margin-left: -.2em;
+	margin-left: -.1em;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
 	background-image: -webkit-linear-gradient(#fff, #fff);
 	background-image: -o-linear-gradient(#fff, #fff);
@@ -3070,7 +3070,8 @@ html.no-js .header__category-item + .header__menu-category-item {
 	bottom: 2rem;
 	width: 4.5rem;
 	height: 4.5rem;
-	padding: 1.3rem;
+	line-height: 4.5rem;
+	text-align: center;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, .7);
@@ -3088,10 +3089,12 @@ html.no-js .header__category-item + .header__menu-category-item {
 }
 
 .articles__item-button svg {
+	display: inline-block;
+	vertical-align: middle;
 	max-width: 100%;
 	max-height: 100%;
-	width: auto;
-	height: auto;
+	width: 1.9rem;
+	height: 1.9rem;
 	fill: currentColor;
 	-webkit-transition: .3s;
 	-o-transition: .3s;
@@ -4895,7 +4898,8 @@ html.no-js .header__category-item + .header__menu-category-item {
 .product__button-favorites-icon {
 	width: 4.5rem;
 	height: 4.5rem;
-	padding: 1.2rem;
+	line-height: 4.1rem;
+	text-align: center;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	border: 2px solid currentColor;
@@ -4913,10 +4917,12 @@ html.no-js .header__category-item + .header__menu-category-item {
 }
 
 .product__button-favorites-icon svg {
+	display: inline-block;
+	vertical-align: middle;
 	max-width: 100%;
 	max-height: 100%;
-	width: auto;
-	height: auto;
+	width: 1.9rem;
+	height: 1.9rem;
 	fill: currentColor;
 	-webkit-transition: .3s;
 	-o-transition: .3s;

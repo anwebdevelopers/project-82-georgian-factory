@@ -123,6 +123,13 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
+        //Выключение при клике по странице
+        document.addEventListener( 'click', function( event ) {
+            if ( ! event.target.closest( '.dropdown' ) ) {
+                $( '.dropdown[ active ]' ).removeAttr( 'active' );
+            }
+        } );
+
     } ( jQuery ) );
 
 
